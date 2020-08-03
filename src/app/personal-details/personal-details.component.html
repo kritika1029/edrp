@@ -22,7 +22,7 @@
         Mother's Name is required
     </div>
     <label for="">Guardian's Name</label>
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" formControlName="guardianName">
     
     <label for="">Nationality:*</label>
     <select name="nation" class="form-control" formControlName="nation">
@@ -45,10 +45,10 @@
         Emailid is required
     </div>
     <label for="handicapped">Physically Handicapped:</label>
-    <select name="handicapped" id="" class="form-control">
+    <select name="handicapped" id="" class="form-control" formControlName="handicapped">
         <option value="">Select</option>
-        <option value="1">YES</option>
-        <option value="2">NO</option>
+        <option value="yes">YES</option>
+        <option value="no">NO</option>
     </select>
 </div>
     
@@ -90,12 +90,12 @@
             Gender is required
         </div>
         <label for="">Secondary Email</label>
-        <input type="email" class="form-control">
+        <input type="email" class="form-control" formControlName="email2">
         <label for="minority">Minority</label>
-        <select name="minority" id="" class="form-control">
+        <select name="minority" id="" class="form-control" formControlName="minority">
             <option value="">Select</option>
-            <option value="y">YES</option>
-            <option value="n">NO</option>
+            <option value="yes">YES</option>
+            <option value="no">NO</option>
         </select>
     </div>
     

@@ -68,18 +68,19 @@
                         
                     <label for="address"><b>Correspondance Address</b></label>
                     <br>
-                    <div class="row form-group">
+                    <div class="row form-group" formGroupName="correspondadd">
                     <div class="col">
                     <label>Address</label>
                     <input type="textarea"
                            class="form-control"
-                           ng-model="ba.street" ng-disabled="sameAddress">
+                           ng-model="ba.street" ng-disabled="sameAddress"
+                           formControlName="caddress">
                 </div>
                 <div class="col">
                     <label for="state">State</label>
                     <select name="state2" 
                             class="form-control"
-                            ng-model="ba.state" ng-disabled="sameAddress">
+                            ng-model="ba.state" ng-disabled="sameAddress" formControlName="cstate">
                         <option value="">Select</option>
                         <option *ngFor="let state of states" [value]="state.code">
                             {{state.name}}
@@ -90,30 +91,30 @@
                     <label for="city">City</label>
                     <input type="text" 
                            class="form-control"
-                           ng-model="ba.city" ng-disabled="sameAddress">
+                           ng-model="ba.city" ng-disabled="sameAddress" formControlName="ccity">
                 </div>
                 <div class="col">
                     <label for="pincode">Pincode</label>
                     <input type="text" 
                            class="form-control"
-                           ng-model="ba.pin" ng-disabled="sameAddress">
+                           ng-model="ba.pin" ng-disabled="sameAddress" formControlName="cpincode">
                 </div>
                 </div>
                 
                 <br>
-                <div class="form-row">
+                <div class="form-row" formGroupName="contact">
         
                     <label for="office" class="col col-form-label">Office Phone:</label>
-                    <input type="text" name="office" class="col form-control">
+                    <input type="text" name="office" class="col form-control" formControlName="officeph">
         
                     <label for="home" class="col col-form-label">Home Phone:</label>
-                    <input type="text" name="home" class="col form-control">
+                    <input type="text" name="home" class="col form-control" formControlName="homeph">
         
                     <label for="other" class="col col-form-label">Other Phone:</label>
-                    <input type="text" name="other" class="col form-control">
+                    <input type="text" name="other" class="col form-control" formControlName="otherph">
         
                     <label for="fax" class="col col-form-label">Fax:</label>
-                    <input type="text" name="fax" class="col form-control">
+                    <input type="text" name="fax" class="col form-control" formControlName="fax">
                 </div>
             </div>
             </div>

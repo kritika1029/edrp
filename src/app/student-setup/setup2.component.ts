@@ -21,6 +21,7 @@ export class Setup2Component implements OnInit{
             '2017-18',
             '2018-19',
             '2019-20',
-            '2020-21'];                 
+            '2020-21'];  
+  entity=['DEI REI INTERN']               
 
 }

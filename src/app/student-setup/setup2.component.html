@@ -36,17 +36,17 @@
                 <label for="parententity">Parent Entity*</label>
                 <select name="parententity" id="" class="form-control" formControlName="parententity">
                     <option value="">Select</option>
-                    <option value="1">DEI REI INTERN</option>
+                    <option *ngFor="let entity of entity" [ngValue]="entity">{{entity}}</option>
                 </select>
                 <div *ngIf="formsetup.get('parententity').touched && formsetup.get('parententity').invalid" class="alert alert-danger">
                     Parent Entity is required
                 </div>
              <label>Student Name(IN HINDI)</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" formControlName="student_hindi_name">
             <label>Mother's Name(IN HINDI)</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" formControlName="mother_hindi_name">
             <label>Father's Name(IN HINDI)</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" formControlName="father_hindi_name">
        </div>
        <div class="photo d-inline-block border border-dark col-2.8">
            <img src="" alt="passportPhoto">

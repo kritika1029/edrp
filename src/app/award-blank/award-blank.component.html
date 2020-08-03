@@ -1,0 +1,136 @@
+<form class="form-horizontal container" #form1="ngForm" (ngSubmit)="submit(form1)"  [formGroup]="form">
+    <div class="card card-default shadow">
+        <div class="card-heading"><h3><b>Award Blank Reports</b></h3></div>
+        <div class="shadow border">
+        <div class="card-body">
+           
+            <div class="form-group" formGroupName="sessionAndEntity">
+                <div class="row">
+                <div class="col-5">
+                    <label class="control-label col-4">Session*</label>
+                    <select class="form-control col-6"  formControlName="session">
+                        <option>Select</option>
+                    </select>            
+                </div>
+                
+            
+                <div class="col-6">                    
+                    <label class="control-label">Search Entity</label>
+                    <div class="row">
+                        <div class="dropdown col">
+                            <div class="row">
+                                <input type="text" placeholder="Search.." id="myInput" class="form-control col-4" onkeyup="filterFunction()">
+                                &nbsp;&nbsp;&nbsp;
+                                <button onclick="myFunction()" class="dropbtn btn btn-secondary col-2">OK</button>
+                        
+                            <div class="col-md-5">
+                                       <select name="" id="myDropdown" class="dropdown-content form-control"> 
+  
+                                           <option value="">Select</option>                  
+                                  <option value="" *ngFor="let ent of entities" [value]="ent.code">
+                                      {{ent.name}}
+                                  </option>
+                                </select>  
+                                </div>                        
+                            </div>
+                          </div>
+                          
+                       <!-- <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                              <a href="#about">About</a>
+                              <a href="#base">Base</a>
+                              <a href="#blog">Blog</a>
+                              <a href="#contact">Contact</a>
+                              <a href="#custom">Custom</a>
+                              <a href="#support">Support</a>
+                              <a href="#tools">Tools</a>
+                            </div>
+                          </div>
+                              -->       
+                    &nbsp;&nbsp;
+                    
+                     </div>
+                
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col form-group"  formGroupName="column1">
+                    <label for="">Entity*</label>
+                    <select name="entity" id="" 
+                            class="form-control" formControlName="entity">
+                        <option value="">Select</option>
+                        <option value="">
+                        </option>
+                    </select>
+                    <label for="">Branch*</label>
+                    <select name="" id="" class="form-control" formControlName="branch">
+                        <option value="">Select</option>
+                        <option value=""></option>
+                    </select>
+                    <label for="">Semester*</label>
+                    <select name="" id="" class="form-control" formControlName="semester">
+                        <option value="">Select</option>
+                        <option *ngFor="let sem of semester" [ngValue]="sem">{{sem}}</option>
+                    </select>
+                   
+                </div>
+
+                <div class="col form-group" formGroupName="column2">
+                    <label for="">Program*</label>
+                    <select name="" id="" class="form-control" formControlName="program">
+                        <option value="">Select</option>
+                        <option value=""></option>
+                    </select>
+                    <label for="">Specialisation*</label>
+                    <select name="" id="" class="form-control" formControlName="specialisation">
+                        <option value="">Select</option>
+                        <option value=""></option>
+                    </select>
+                    <label for="">Course Code*</label>
+                    <select name="" id="" class="form-control" formControlName="coursecode">
+                        <option value="">Select</option>
+                        <option value=""></option>
+                    </select>
+                    <label for="">Award Blank Type*</label>
+                    <select name="" id="" class="form-control" formControlName="awardtype">
+                        <option value="">Select</option>
+                        <option value=""></option>
+                    </select>
+                    
+                </div>
+            </div>
+
+            <label for="" class="control-label">Father Name required?</label>
+            <select name="" id="" class="form-control" formControlName="fathername">
+                <option value="yes" >Yes</option>
+                <option value="no">No</option>
+            </select>
+            <br>
+            <div class="row">
+                <button class="btn btn-secondary">Generate</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-secondary">Download</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-secondary">Print</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-secondary" (click)="form1.reset()">Reset</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-secondary">Cancel</button>
+            </div>
+           <!-- <div class="control-group">
+                <label for="input1" class="control-label col-sm-2">Label</label>
+                <div class="controls col-sm-10">
+                    <input id="input1" type="text">
+                </div> 
+            </div>-->
+            </div>
+        </div>
+        <span class="text-red">Note:* = Mandatory fields to be selected.</span>
+        </div>
+    
+    </form>
+    
+    
