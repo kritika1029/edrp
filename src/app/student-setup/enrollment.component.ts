@@ -1,6 +1,6 @@
 import { FormGroup, FormControl,Validators } from '@angular/forms';
 import { Component, Input } from '@angular/core';
-import { OnlyNumbersValidators } from 'src/common/only-numbers.validators';
+import { OnlyNumbersValidators } from 'src/app/common/only-numbers.validators';
 
 @Component({
   selector: 'enrollmentff',

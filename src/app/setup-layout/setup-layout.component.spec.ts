@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThirdComponent } from './third.component';
+import { SetupLayout } from './setup-layout.component';
 
-describe('ThirdComponent', () => {
-  let component: ThirdComponent;
-  let fixture: ComponentFixture<ThirdComponent>;
+describe('SetupLayout', () => {
+  let component: SetupLayout;
+  let fixture: ComponentFixture<SetupLayout>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ThirdComponent ]
+      declarations: [ SetupLayout ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ThirdComponent);
+    fixture = TestBed.createComponent(SetupLayout);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
