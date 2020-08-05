@@ -28,6 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## STEPS TO BE FOLLOWED:
 1. Clone the repository using github desktop(preferred) or git clone command.
-2. Open the project in your local desktop(Generally in 'Github' folder of 'Documents'.
+2. Open the project in your local desktop(Generally in 'Github' folder of 'Documents').
 3. Run command 'npm install' to install all the packages required.
 4. Run the command 'ng serve' to run the application on your local screen.
