@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -8,11 +8,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EvaluationComponent implements OnInit {
   rowData: any;
+  @Input() selectedRows: any;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.rowData = this.http.get('');
+    
+    this.rowData = this.http.get('./assets/data.json');
   }
   columnDefs = [
         {headerName: 'Component Name',field: 'cname', sortable: true, filter: true},
@@ -22,6 +24,5 @@ export class EvaluationComponent implements OnInit {
         {headerName: 'Total Component Marks',field: 'tcmarks', sortable: true, filter: true},
         {headerName: 'Order in Marks',field: 'order', sortable: true, filter: true}
     ];
-
 
 }

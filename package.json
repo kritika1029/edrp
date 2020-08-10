@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~9.1.9",
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
+    "@ng-select/ng-select": "^4.0.4",
     "@types/jquery": "^3.5.1",
     "ag-grid-angular": "^23.2.1",
     "ag-grid-community": "^23.2.1",

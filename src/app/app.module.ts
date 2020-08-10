@@ -1,3 +1,4 @@
+import { NgSelectModule } from '@ng-select/ng-select';
 import { StemplateComponent } from './stemplate/stemplate.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { EntityComponent } from './entity/entity.component';
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SetupLayout } from './setup-layout/setup-layout.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/course-evaluation-layout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/cour
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgSelectModule,
+    BrowserAnimationsModule,
     AgGridModule.withComponents([]),
     RouterModule.forRoot([
       {
@@ -75,12 +79,16 @@ import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/cour
           },
           {
             path:'entity',
-            component:EntityComponent
+            component:EntityComponent,
+            children:[
+              {
+                path:'evaluation',
+                component:EvaluationComponent
+              }
+            ]
           }          
         ]
       }
-
-       
     ])
   ],
   providers: [],

@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @Component({
   selector: 'award-blank',
@@ -9,6 +9,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class AwardBlankComponent implements OnInit{
 
+  selectedValue = 'yes';
   form: FormGroup;
   constructor(fb:FormBuilder)
   {
@@ -43,6 +44,7 @@ export class AwardBlankComponent implements OnInit{
   ];
   semester=["1","2","3","4","5","6","7","8","9","10","11","12"];
 
+ selected=[];
   
   submit(form1: { value: any; })
   {
