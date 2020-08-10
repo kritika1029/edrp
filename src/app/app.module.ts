@@ -1,13 +1,10 @@
 import { StemplateComponent } from './stemplate/stemplate.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { EntityComponent } from './entity/entity.component';
-import { SecondComponent } from './first/second.component';
 import { RouterModule } from '@angular/router';
 import { EnrollmentComponent } from './student-setup/enrollment.component';
 import { ContactComponent } from './personal-details/contact.component';
 import { Setup2Component } from './student-setup/setup2.component';
-import { TwoComponent } from './two.component';
-import { OneComponent } from './one.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,9 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentSetupComponent } from './student-setup/student-setup.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
-import { FirstComponent } from './first/first.component';
 import { AwardBlankComponent } from './award-blank/award-blank.component';
-import { ThirdComponent } from './third/third.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { UploaderModule  } from '@syncfusion/ej2-angular-inputs';
@@ -32,21 +27,22 @@ import { ImageuploadComponent } from './imageupload/imageupload.component';
 import { DropadddetailComponent } from './dropadddetail/dropadddetail.component';
 import { CommonModule } from "@angular/common";
 
+import { SetupLayout } from './setup-layout/setup-layout.component';
+import { HomeComponent } from 'src/app/home/home.component';
+import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/course-evaluation-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OneComponent,
-    TwoComponent,
     StudentSetupComponent,
     Setup2Component,
     PersonalDetailsComponent,
     ContactComponent,
     EnrollmentComponent,
-    FirstComponent,
-    SecondComponent,
+    SetupLayout,
+    HomeComponent,
     AwardBlankComponent,
-    ThirdComponent,
+    CourseEvaluationLayoutComponent,
     EntityComponent,
     EvaluationComponent,
     StemplateComponent,
@@ -79,7 +75,7 @@ import { CommonModule } from "@angular/common";
       },
       {
         path:'first',
-        component:FirstComponent,
+        component:SetupLayout,
         children:[
           {
             path:'form',
@@ -89,7 +85,7 @@ import { CommonModule } from "@angular/common";
       },
       {
         path:'home',
-        component:SecondComponent
+        component:HomeComponent
       },
       {
         path:'second',
@@ -97,7 +93,7 @@ import { CommonModule } from "@angular/common";
       },
       {
         path:'third',
-        component:ThirdComponent,
+        component:CourseEvaluationLayoutComponent,
         children:[
           {
             path:'select-template',

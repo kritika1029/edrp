@@ -1,6 +1,6 @@
 import { Component, Input  } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
-import { OnlyNumbersValidators } from 'src/common/only-numbers.validators';
+import { OnlyNumbersValidators } from 'src/app/common/only-numbers.validators';
 
 @Component({
   selector: 'app-coursesadd',

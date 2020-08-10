@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-entity',
   templateUrl: './entity.component.html',
   styleUrls: ['./entity.component.css']
 })
 export class EntityComponent implements OnInit {
-
   rowData: any;
-
+  gridApi: any;
+  rowSelection = 'single';
+  gridColumnApi: any;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -24,6 +24,15 @@ export class EntityComponent implements OnInit {
         {headerName: 'Course',field: 'course', sortable: true, filter: true}
     ];
 
-    
+    onSelectionChanged() {
+      var selectedRows = this.gridApi.getSelectedRows();
+      document.querySelector('#selectedRows').innerHTML =
+        selectedRows.length === 1 ? selectedRows[0].program : ' ';
+    }
+    onGridReady(params: { api: any; columnApi: any; }) {
+      this.gridApi = params.api;
+      this.gridColumnApi = params.columnApi;
+    }
+  
 
 }
