@@ -1,3 +1,4 @@
+import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { StemplateComponent } from './stemplate/stemplate.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
@@ -16,7 +17,6 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
 import { AwardBlankComponent } from './award-blank/award-blank.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
-import { UploaderModule  } from '@syncfusion/ej2-angular-inputs';
 import { FinalregistrationComponent } from './finalregistration/finalregistration.component';
 import { Finalreg2Component } from './finalreg2/finalreg2.component';
 import { GriddataComponent } from './griddata/griddata.component';
@@ -69,12 +69,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-<<<<<<< HEAD
     NgSelectModule,
     BrowserAnimationsModule,
-=======
     UploaderModule,
->>>>>>> 84db9bb89c6d8c72239d04d2c9b1cdb78849902b
     AgGridModule.withComponents([]),
     RouterModule.forRoot([
       {
@@ -108,7 +105,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
           },
           {
             path:'entity',
-<<<<<<< HEAD
+
             component:EntityComponent,
             children:[
               {
@@ -118,10 +115,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
             ]
           }          
         ]
-      }
-=======
-            component:EntityComponent
-          }    ]},
+      },         
           {
             path:'upload1',
             component:ImageuploadComponent
@@ -145,8 +139,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       {path: 'selected' ,component: DropadddetailComponent  }
 
         ]}
-       
->>>>>>> 84db9bb89c6d8c72239d04d2c9b1cdb78849902b
     ])
   ],
   providers: [],
