@@ -1,0 +1,26 @@
+
+<div class="card ">
+    <div class="card-header"><h6>Add or Drop Courses</h6></div>
+    <div class="card-body">
+        <form class="form-inline" >
+        <div class="float-right" class="form-group">
+            <label class=" control-label col-6" >Enter Roll Number</label>
+
+            <input 
+       name="enrollment" 
+       type="text" class="form-control " 
+       formControlName="enrollment">
+    <div class="alert alert-danger" *ngIf="enrollment.touched && !enrollment.valid">
+        <div *ngIf="enrollment.errors.required">Enrollment Number is required</div>
+        <div *ngIf="enrollment.errors.onlyNumber">Enter Only Digits</div>
+        </div>
+
+            <button type="submit" class="btn btn-light " routerLink="/mastercourseadd/data"  >Submit</button>
+            <button type="cancel" class="btn btn-light">Cancel</button>
+        </div>
+        </form>
+         
+    </div>
+  </div>
+  <br>
+  <router-outlet></router-outlet>
