@@ -16,6 +16,18 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
 import { AwardBlankComponent } from './award-blank/award-blank.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { UploaderModule  } from '@syncfusion/ej2-angular-inputs';
+import { FinalregistrationComponent } from './finalregistration/finalregistration.component';
+import { Finalreg2Component } from './finalreg2/finalreg2.component';
+import { GriddataComponent } from './griddata/griddata.component';
+import { AddComponent } from './add/add.component';
+import { DropComponent } from './drop/drop.component';
+import { CoursesaddComponent } from './coursesadd/coursesadd.component';
+import { GridssComponent } from './gridss/gridss.component';
+import { ImageuploadComponent } from './imageupload/imageupload.component';
+import { DropadddetailComponent } from './dropadddetail/dropadddetail.component';
+import { CommonModule } from "@angular/common";
+
 import { SetupLayout } from './setup-layout/setup-layout.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/course-evaluation-layout.component';
@@ -35,17 +47,34 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CourseEvaluationLayoutComponent,
     EntityComponent,
     EvaluationComponent,
-    StemplateComponent
+    StemplateComponent,
+    ImageuploadComponent,
+    FinalregistrationComponent,
+    Finalreg2Component,
+    GriddataComponent,
+     CoursesaddComponent,
+    GridssComponent,
+    AddComponent,
+    DropComponent,
+    DropadddetailComponent,
+    
+
     
   ],
   imports: [
     BrowserModule,
+    CommonModule ,
+    FormsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+<<<<<<< HEAD
     NgSelectModule,
     BrowserAnimationsModule,
+=======
+    UploaderModule,
+>>>>>>> 84db9bb89c6d8c72239d04d2c9b1cdb78849902b
     AgGridModule.withComponents([]),
     RouterModule.forRoot([
       {
@@ -79,6 +108,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
           },
           {
             path:'entity',
+<<<<<<< HEAD
             component:EntityComponent,
             children:[
               {
@@ -89,6 +119,34 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
           }          
         ]
       }
+=======
+            component:EntityComponent
+          }    ]},
+          {
+            path:'upload1',
+            component:ImageuploadComponent
+          },
+          {
+            path:'fregister',
+            component:FinalregistrationComponent,
+            children:[
+          {path: 'registration', component: Finalreg2Component},
+          {path: 'registration', component: GriddataComponent}
+        
+        ]
+      },
+      {
+        path:'mastercourseadd',
+        component:CoursesaddComponent,
+        children:[
+      {path: 'data' ,component: GridssComponent  },
+      {path: 'add/drop' ,component: DropComponent  },
+      {path: 'add/drop' ,component: AddComponent  },
+      {path: 'selected' ,component: DropadddetailComponent  }
+
+        ]}
+       
+>>>>>>> 84db9bb89c6d8c72239d04d2c9b1cdb78849902b
     ])
   ],
   providers: [],

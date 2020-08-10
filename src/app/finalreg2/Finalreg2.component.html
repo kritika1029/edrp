@@ -1,0 +1,57 @@
+<div class="card card-default">
+    <div class="card-header"><h6>Report: 5-Final Registration Chart</h6></div>
+    <div class="card-body">
+    <form class="form-inline" action="/action_page.php">
+      <div class ="form-group" >
+        <label for ="ccontactMethod">Session Year</label>
+        <select ngModel name="ccontactMethod" id="ccontactMethod" class="form-control">
+          <option value="">Select</option>
+          <option *ngFor="let method of ccontactMethod" [value]="method.id">{{method.name}}</option>
+         
+        </select>
+      </div>
+    
+    </form>
+  <br>
+  <div class="container">
+    <div class="row">
+    <div class="col-md-8">
+    <form  class="form-inline" action="#" method="post">
+      <div class ="form-group"><label class = "col-5 ">Search Entity</label>
+  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+  
+  <button type="button" class="btn btn-light">OK</button>
+  </div>
+    </form>
+    </div></div>
+    </div>
+    <br>
+    <form  class="form-inline" action="/action_page.php">
+
+      <div class ="form-group" >
+        <label for ="contactMethod" class = "col-4">Entity Name</label>
+
+        <select class="form-control" ngModel name="contactMethod" id="contactMethod" >
+          <option value="">Select</option>
+          
+          <option *ngFor="let method of contactMethod" [value]="method.id">{{method.name}}</option>
+        </select>
+      
+      </div>
+      <div class ="form-group" >
+        <label for ="contactMethod" class = "col-4">Report Header</label>
+        <select class="form-control" ngModel name="contactMethod" id="contactMethod"  >
+          <option value="">Select</option>
+          
+          <option value="Final Registration Chart" >Final Registration Chart</option>
+          <option value="Final Registration Chart" >Checklist Registration</option>
+        </select>
+      </div>
+    
+    </form>
+    <br>
+    <button type="button" class="btn btn-light" onclick="goBack()" routerLink="/fregister">Back to Reports</button>
+  </div>
+  </div>
+
+  <app-griddata></app-griddata>

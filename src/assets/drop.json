@@ -1,0 +1,17 @@
+[
+    {
+        "ccode": "NONE", "cname": "NONE", "cred": "0.00", "classi": "---", "typ": "---","cat": "---"
+    },
+    {
+        "ccode": "IBI401", "cname": "BIOLOGY(THEORY)", "cred": "3.50", "classi": "Theory", "typ": "Major Course","cat": "Regular"
+    },
+    {
+        "ccode": "IBI402", "cname": "BIOLOGY(PRACTICAL)", "cred": "1.50", "classi": "Practical", "typ": "Major Course","cat": "Regular"
+    },
+    {
+        "ccode": "ICC401", "cname": "CO-CURRICULAR ACTIVITIES", "cred": "3.00", "classi": "Theory", "typ": "Core","cat": "Regular"
+    },
+    {
+        "ccode": "ICM401", "cname": "CHEMISTRY(THEORY)", "cred": "3.50", "classi": "Theory", "typ": "Major Course","cat": "Regular"
+    }
+]

@@ -1,0 +1,64 @@
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #3adfd1;">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Master Setup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Grades and Reports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Student</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Reports</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="card">
+  <div class="card-header"><h6>Reports</h6></div>
+  <div class="card-body">
+  <form class="form-inline" action="#">
+    
+    <div class ="form-group" >
+      <label for ="contactMethod">Session Year</label>
+
+      <select ngModel name="ccontactMethod" id="ccontactMethod" class="form-control">
+        <option value="">Select</option>
+        <option *ngFor="let method of ccontactMethod" [value]="method.id">{{method.name}}</option>
+       
+      </select>
+    </div>
+ 
+  </form>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <form class="form-inline" action="#">
+      <div class ="radio" >
+        <label>
+          <input type="radio" name="contactMethod" routerLink="/fregister/registration">
+          5- Final Registration Chart
+        </label>
+
+</div>
+</form>
+</div>
+</div>
+<br>
+
+<router-outlet></router-outlet>
+
+
+

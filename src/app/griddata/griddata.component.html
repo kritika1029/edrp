@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header"><h6>Details</h6></div>
+  <div class="card-body">
+      <ag-grid-angular
+      style="width: 1250px; height: 550px;"
+      class="ag-theme-blue"
+    
+      [rowData]="rowData | async"
+      [columnDefs]="columnDefs"
+      rowSelection="single"></ag-grid-angular>
+    </div>
+  </div>

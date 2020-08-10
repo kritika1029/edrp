@@ -1,0 +1,21 @@
+[
+        
+    { "programName": "B.ed", "branchName": "none", "specializationName": "none",
+      "sem": "Semester 3" ,"sems": "2019","seme":"2019"},
+      
+
+      { "programName": "B.ed", "branchName": "none", "specializationName": "none",
+         "sem": "Semester 2","sems": "2018","seme":"2018"},
+
+      { "programName": "B.ed", "branchName": "none", "specializationName": "none", 
+        "sem": "Semester 4" ,"sems": "2015","seme":"2015" },
+
+      { "programName": "B.ed", "branchName": "none", "specializationName": "none",
+        "sem": "Semester 1" ,"sems": "2013","seme":"2013"},
+
+      { "programName": "B.ed Integrated","branchName": "none", "specializationName": "none",
+        "sem": "Semester 4" ,"sems": "2014","seme":"2014" },
+
+      { "programName": "B.ed Integrated", "branchName": "none", "specializationName": "none",
+        "sem": "Semester 1" ,"sems": "2017","seme":"2017" }
+  ]
