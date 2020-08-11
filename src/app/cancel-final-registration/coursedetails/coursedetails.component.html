@@ -1,0 +1,54 @@
+<form class="form-inline" action="/action_page.php" #g="ngForm">
+    <div class="container">
+        <!-- <div class="card card-default"> -->
+            <!-- <div class="card-header"><b>Cancel Final Registration</b></div> -->
+            <!-- <div class="card-body"> -->
+
+
+    <div class="form-group row">
+        <div class="w-75 d-inline-block col"><br>
+            <div class="row">
+                <div class="col-1 col-form-label">
+        <label for="status" class="">Program*: </label>
+                </div>
+                <div class="col">
+                    <select class="form-control" id="program "
+                    required
+                    [(ngModel)]="program " name="program ">
+                    <option  [ngValue]="null">Select Program </option>
+                    <option *ngFor="let pow of program" [value]="pow.id">{{pow.name}}</option>
+                  </select>
+        <!-- <div *ngIf="formsetup.get('status').touched && formsetup.get('status').invalid" class="alert alert-danger">
+           Status is required
+        </div> -->
+        </div>
+    
+    <div class="col-1 col-form-label">
+        <label for="session">Session:*</label>
+    </div>
+    <div class="col">
+        <select class="form-control" id="session "
+        required
+        [(ngModel)]="session " name="session ">
+        <option  [ngValue]="null">Select Session </option>
+        <option *ngFor="let pow of session" [value]="pow.id">{{pow.name}}</option>
+      </select>
+            <!-- <div *ngIf="formsetup.get('sessionyear').touched && formsetup.get('sessionyear').invalid" class="alert alert-danger">
+                Session is required
+            </div> -->
+            </div>
+
+           
+            </div>
+
+            <button class="btn1 btn-default" type="ok" routerLink="/sixth/coursedetails/studentdetails">Ok</button>
+            <button class="btn1 btn-default" type="cancel" click="g.reset()" >Cancel</button>
+            <!-- <router-outlet></router-outlet> -->
+        </div>
+        </div>
+    <!-- </div> -->
+        <!-- </div> -->
+    </div>
+</form>
+<router-outlet></router-outlet>
+

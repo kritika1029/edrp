@@ -1,0 +1,31 @@
+<form class="form-inline" action="/action_page.php" #f="ngForm" [formGroup]="formenroll">
+    <div class="container">
+        <div class="card card-default">
+            <div class="card-header"><b>Cancel Final Registration</b></div>
+            <div class="card-body">
+
+                <div class="form-group">
+                    <label for="enrollment">Enter Roll No.:</label>
+                    
+                    <input 
+                       name="enrollment" 
+                       type="text" class="form-control mar" 
+                       formControlName="enrollment">
+                    <div class="alert alert-danger" *ngIf="enrollment.touched && !enrollment.valid">
+                        <div *ngIf="enrollment.errors.required">Roll Number is required</div>
+                        <div *ngIf="enrollment.errors.onlyNumber">Enter Only Digits</div>
+                        </div>
+
+                   <button class="btn1 btn-defult" routerLink="/sixth/coursedetails" 
+                   (click)="clicked = true;" 
+                   [disabled]="(!f.valid || clicked)">Submit</button>
+                    <!-- <app-coursedetails></app-coursedetails> -->
+                    <router-outlet></router-outlet>
+                </div>
+                <!-- <enrollmentff></enrollmentff>
+                <router-outlet></router-outlet> -->
+            </div>
+        </div>
+        </div>
+    
+</form>

@@ -18,6 +18,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { SetupLayout } from './setup-layout/setup-layout.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/course-evaluation-layout.component';
+import { MarkUfmComponent } from './mark-ufm/mark-ufm/mark-ufm.component';
+import { EditNameInHindiComponent } from './edit-name-in-hindi (master)/edit-name-in-hindi/edit-name-in-hindi.component';
+import { EditNameDataGridComponent } from './editname-datagrid/edit-name-data-grid/edit-name-data-grid.component';
+import { RollnumberComponent } from './cancel-final-registration/rollnumber/rollnumber.component';
+import { CoursedetailsComponent } from './cancel-final-registration/coursedetails/coursedetails.component';
+import { StudentdetailsComponent } from './cancel-final-registration/studentdetails/studentdetails.component';
+import { AcademicDetailsComponent } from './cancel-final-registration/studentdetails/academic-details/academic-details.component';
+import { SemesterDetailsComponent } from './cancel-final-registration/studentdetails/semester-details/semester-details.component';
+import { ComboBoxComponent } from './common/combo-box with entity service/combo-box/combo-box/combo-box.component';
+import { ServiceService } from './service/service.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +43,16 @@ import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/cour
     CourseEvaluationLayoutComponent,
     EntityComponent,
     EvaluationComponent,
-    StemplateComponent
+    StemplateComponent,
+    MarkUfmComponent,
+    EditNameInHindiComponent,
+    EditNameDataGridComponent,
+    RollnumberComponent,
+    CoursedetailsComponent,
+    StudentdetailsComponent,
+    AcademicDetailsComponent,
+    SemesterDetailsComponent,
+    ComboBoxComponent
     
   ],
   imports: [
@@ -78,12 +97,48 @@ import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/cour
             component:EntityComponent
           }          
         ]
-      }
+      },
+      {
+        path:'forth',
+        component:MarkUfmComponent
+      },
+      {
+        path:'fivth',
+        component:EditNameInHindiComponent,
+        children:[
+          {
+            path:'editname-datagrid',
+            component:EditNameDataGridComponent
+          }
+        ]
+      },
+      // {
+      //       path:'editname-datagrid',
+      //       component:EditNameDataGridComponent
+      //     },
 
-       
+          {
+            path:'sixth',
+            component:RollnumberComponent,
+            children:[
+              {
+                path:'coursedetails',
+                component:CoursedetailsComponent,
+                children:[
+                  {
+                    path:'studentdetails',
+                    component:StudentdetailsComponent
+                  }
+                ]
+              },
+              
+            ]
+          },
+         
+           
     ])
   ],
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
