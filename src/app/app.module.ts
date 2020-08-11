@@ -1,3 +1,5 @@
+import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { StemplateComponent } from './stemplate/stemplate.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { EntityComponent } from './entity/entity.component';
@@ -15,9 +17,21 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
 import { AwardBlankComponent } from './award-blank/award-blank.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { FinalregistrationComponent } from './finalregistration/finalregistration.component';
+import { Finalreg2Component } from './finalreg2/finalreg2.component';
+import { GriddataComponent } from './griddata/griddata.component';
+import { AddComponent } from './add/add.component';
+import { DropComponent } from './drop/drop.component';
+import { CoursesaddComponent } from './coursesadd/coursesadd.component';
+import { GridssComponent } from './gridss/gridss.component';
+import { ImageuploadComponent } from './imageupload/imageupload.component';
+import { DropadddetailComponent } from './dropadddetail/dropadddetail.component';
+import { CommonModule } from "@angular/common";
+
 import { SetupLayout } from './setup-layout/setup-layout.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/course-evaluation-layout.component';
+<<<<<<< HEAD
 import { MarkUfmComponent } from './mark-ufm/mark-ufm/mark-ufm.component';
 import { EditNameInHindiComponent } from './edit-name-in-hindi (master)/edit-name-in-hindi/edit-name-in-hindi.component';
 import { EditNameDataGridComponent } from './editname-datagrid/edit-name-data-grid/edit-name-data-grid.component';
@@ -28,6 +42,9 @@ import { AcademicDetailsComponent } from './cancel-final-registration/studentdet
 import { SemesterDetailsComponent } from './cancel-final-registration/studentdetails/semester-details/semester-details.component';
 import { ComboBoxComponent } from './common/combo-box with entity service/combo-box/combo-box/combo-box.component';
 // import { ServiceService } from './service/service.service';
+=======
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+>>>>>>> bb3b28984be269182752496caffde5ea807fe576
 
 @NgModule({
   declarations: [
@@ -44,6 +61,7 @@ import { ComboBoxComponent } from './common/combo-box with entity service/combo-
     EntityComponent,
     EvaluationComponent,
     StemplateComponent,
+<<<<<<< HEAD
     MarkUfmComponent,
     EditNameInHindiComponent,
     EditNameDataGridComponent,
@@ -53,14 +71,32 @@ import { ComboBoxComponent } from './common/combo-box with entity service/combo-
     AcademicDetailsComponent,
     SemesterDetailsComponent,
     ComboBoxComponent
+=======
+    ImageuploadComponent,
+    FinalregistrationComponent,
+    Finalreg2Component,
+    GriddataComponent,
+     CoursesaddComponent,
+    GridssComponent,
+    AddComponent,
+    DropComponent,
+    DropadddetailComponent,
+    
+
+>>>>>>> bb3b28984be269182752496caffde5ea807fe576
     
   ],
   imports: [
     BrowserModule,
+    CommonModule ,
+    FormsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgSelectModule,
+    BrowserAnimationsModule,
+    UploaderModule,
     AgGridModule.withComponents([]),
     RouterModule.forRoot([
       {
@@ -94,9 +130,17 @@ import { ComboBoxComponent } from './common/combo-box with entity service/combo-
           },
           {
             path:'entity',
-            component:EntityComponent
+
+            component:EntityComponent,
+            children:[
+              {
+                path:'evaluation',
+                component:EvaluationComponent
+              }
+            ]
           }          
         ]
+<<<<<<< HEAD
       },
       {
         path:'forth',
@@ -136,6 +180,32 @@ import { ComboBoxComponent } from './common/combo-box with entity service/combo-
           },
          
            
+=======
+      },         
+          {
+            path:'upload1',
+            component:ImageuploadComponent
+          },
+          {
+            path:'fregister',
+            component:FinalregistrationComponent,
+            children:[
+          {path: 'registration', component: Finalreg2Component},
+          {path: 'registration', component: GriddataComponent}
+        
+        ]
+      },
+      {
+        path:'mastercourseadd',
+        component:CoursesaddComponent,
+        children:[
+      {path: 'data' ,component: GridssComponent  },
+      {path: 'add/drop' ,component: DropComponent  },
+      {path: 'add/drop' ,component: AddComponent  },
+      {path: 'selected' ,component: DropadddetailComponent  }
+
+        ]}
+>>>>>>> bb3b28984be269182752496caffde5ea807fe576
     ])
   ],
   providers: [],

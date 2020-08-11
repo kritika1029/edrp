@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-entity',
@@ -11,7 +12,8 @@ export class EntityComponent implements OnInit {
   gridApi: any;
   rowSelection = 'single';
   gridColumnApi: any;
-  constructor(private http: HttpClient) { }
+  selectedRows: string | any[];
+  constructor(private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
     this.rowData = this.http.get('./assets/data.json');
@@ -24,10 +26,17 @@ export class EntityComponent implements OnInit {
         {headerName: 'Course',field: 'course', sortable: true, filter: true}
     ];
 
+<<<<<<< HEAD
     onSelectionChanged($event) {
       var selectedRows = this.gridApi.getSelectedRows();
       document.querySelector('#selectedRows').innerHTML =
         selectedRows.length === 1 ? selectedRows[0].program : ' ';
+=======
+    onSelectionChanged(_event) {
+      this.selectedRows = this.gridApi.getSelectedRows();
+      document.querySelector('#selectedRows').innerHTML =this.selectedRows[0].program;
+        this.router.navigate(['/third/entity/evaluation']) 
+>>>>>>> bb3b28984be269182752496caffde5ea807fe576
     }
     onGridReady(params: { api: any; columnApi: any; }) {
       this.gridApi = params.api;

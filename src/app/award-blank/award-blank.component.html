@@ -1,6 +1,6 @@
 <form class="form-horizontal container" #form1="ngForm" (ngSubmit)="submit(form1)"  [formGroup]="form">
     <div class="card card-default shadow">
-        <div class="card-heading"><h3><b>Award Blank Reports</b></h3></div>
+        <div class="card-heading"><h4>&nbsp; Award Blank Reports</h4></div>
         <div class="shadow border">
         <div class="card-body">
            
@@ -9,7 +9,8 @@
                 <div class="col-5">
                     <label class="control-label col-4">Session*</label>
                     <select class="form-control col-6"  formControlName="session">
-                        <option>Select</option>
+                        <option value="">Select</option>
+                        <option></option>
                     </select>            
                 </div>
                 
@@ -17,16 +18,15 @@
                 <div class="col-6">                    
                     <label class="control-label">Search Entity</label>
                     <div class="row">
-                        <div class="dropdown col">
-                            <div class="row">
-                                <input type="text" placeholder="Search.." id="myInput" class="form-control col-4" onkeyup="filterFunction()">
-                                &nbsp;&nbsp;&nbsp;
-                                <button onclick="myFunction()" class="dropbtn btn btn-secondary col-2">OK</button>
-                        
-                            <div class="col-md-5">
-                                       
-                                </div>                        
-                            </div>
+                        <div class="col">
+                            
+                                <ng-select formControlName="searchentity"
+                                class="wid" [items]="entities"
+                                            bindLabel="name"
+                                           placeholder="Select item"
+                                            appendTo="body"
+                                           [(ngModel)]="selected"></ng-select>
+                   
                           </div>
                           
                        <!-- <div class="dropdown">
@@ -43,10 +43,9 @@
                             </div>
                           </div>
                               -->       
-                    &nbsp;&nbsp;
+                   
                     
                      </div>
-                
                 </div>
             </div>
             </div>
@@ -96,10 +95,9 @@
                     
                 </div>
             </div>
-
             <label for="" class="control-label">Father Name required?</label>
-            <select name="" id="" class="form-control" formControlName="fathername">
-                <option value="yes" >Yes</option>
+            <select name="" id="" class="form-control" formControlName="fathername" [(ngModel)]="selectedValue">
+                <option value="yes">Yes</option>
                 <option value="no">No</option>
             </select>
             <br>

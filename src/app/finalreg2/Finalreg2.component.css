@@ -1,0 +1,6 @@
+.form-inline > * {
+    margin:5px 70px;
+ }
+ .form-control {
+     margin-left: 8px;
+ }

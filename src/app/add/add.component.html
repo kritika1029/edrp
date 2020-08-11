@@ -1,0 +1,18 @@
+
+<div class="card ">
+    <div class="card-header"><h6>Select Course(s) to be added</h6>
+        <div class="text-right" ><a href="#"  role="button" routerLink="/mastercourseadd/data/selected">Add</a> 
+        </div> 
+    </div>
+    <div class="card-body">
+        <ag-grid-angular
+        style="width: 1350px; height: 100px;"
+        class="ag-theme-blue"
+        [rowData]="rowData | async"
+        [columnDefs]="columnDefs"
+        rowSelection="multiple"
+        >
+    </ag-grid-angular>
+    </div>
+</div>
+<router-outlet></router-outlet>
