@@ -2,7 +2,7 @@ import { Component,Input} from '@angular/core';
 import { FormGroup, FormControl,Validators } from '@angular/forms';
 import { OnlyNumbersValidators } from 'src/app/common/only-numbers.validators';
 import { Cancel }    from '../cancel';
-import { NgSelectOption, NgForm } from '@angular/forms';
+import {  NgForm } from '@angular/forms';
 import { SelectorFlags } from '@angular/compiler/src/core';
 import { SelectorListContext } from '@angular/compiler';
 
@@ -38,13 +38,6 @@ export class MarkUfmComponent {
            '2016-07-01/2017-06-30',
            '2015-07-01/2016-06-30'];
   
-  // dates = [
-  //   {"id":"1","name":"2019-07-01/2020-06-30"},
-  //   {"id":1, "name": 2018-07-01/2019-06-30},
-  //   {id:1,name:"2017-07-01/2018-06-30"},
-  //   {id:1,name:"2016-07-01/2017-06-3"},
-  //   {id:1,name:"2015-07-01/2016-06-30"},
-  // ];
 
   semesters = ['1',
                '2',
@@ -62,12 +55,6 @@ export class MarkUfmComponent {
            'Scrutiny',
            'Incomplete',
            'Discontinued'];
-
-  // ={
-  //   {"id:1,"name":"Revision"},
-  //   {"id":2,"name":"Unfair Means"},
-  //   {"id":2,"name":"Discontinued"}
-  // };
 
 
 model = new Cancel(this.dates[0],this.semesters[0], this.issues[0],12345);

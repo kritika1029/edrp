@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 // import { ServiceService } from './service/service.service';
 
 
+
 @Component({
   selector: 'app-edit-name-in-hindi',
   templateUrl: './edit-name-in-hindi.component.html',

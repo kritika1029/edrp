@@ -3,12 +3,10 @@
         <h5><b>Mark UFM</b></h5></div>
     <div class="shadow border">
     <div class="card-body">
-<!-- <div class="outer-div"> -->
-    <!-- <div class="text-alignment">Mark UFM</div>   -->
-    <!-- <div class="container"> -->
+
       <div [hidden]="submitted" class="submitted">
       
-        <!-- <form (ngSubmit)="onSubmit()" #cancelForm="ngForm"> -->
+        
           <form class="form-inline" (ngSubmit)="onSubmit(cancelForm)" #cancelForm="ngForm">
        
           <div class="form-group row">
@@ -39,7 +37,7 @@
             <div [hidden]="semester.valid" class="alert alert-danger">
               <!-- <div [hidden]="semester.valid || semester.pristine" class="alert alert-danger">  -->
                *Semester/Module is required 
-              <!-- *Required -->
+              
             </div>
           </div> 
     
@@ -92,28 +90,6 @@
           <!-- </div>  -->
         </form>
       </div>
-    
-    
-      <!-- <div [hidden]="!submitted"> 
-        <div class="userresponse">You submitted the following:</div>
-         <div class="row">
-          <div class="col">Session:- {{ model.session }}</div>
-          <div class="col-xs-9">{{ model.session }}</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-3">Semester:- {{ model.semester }}</div>
-          <div class="col-xs-9">{{ model.semester }}</div>
-        </div>
-        <div class="row">
-          <div class="col-xs-3">Issue:- {{ model.issue  }}</div>
-          <div class="col-xs-9">{{ model.issue }}</div>
-        </div>
-         <div class="row">
-          <div class="col-xs-3">Roll Number:- {{ model.rollNumber }}</div> 
-          <div class="col-xs-9">{{ model.rollNumber }}</div>
-        </div>
-        
-         <button class="btn btn-primary" (click)="submitted=false">Edit</button> 
-      </div> -->
+  
     </div>
   </div>

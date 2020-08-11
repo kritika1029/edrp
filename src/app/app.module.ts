@@ -27,7 +27,7 @@ import { StudentdetailsComponent } from './cancel-final-registration/studentdeta
 import { AcademicDetailsComponent } from './cancel-final-registration/studentdetails/academic-details/academic-details.component';
 import { SemesterDetailsComponent } from './cancel-final-registration/studentdetails/semester-details/semester-details.component';
 import { ComboBoxComponent } from './common/combo-box with entity service/combo-box/combo-box/combo-box.component';
-import { ServiceService } from './service/service.service';
+// import { ServiceService } from './service/service.service';
 
 @NgModule({
   declarations: [
@@ -138,7 +138,7 @@ import { ServiceService } from './service/service.service';
            
     ])
   ],
-  providers: [ServiceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
