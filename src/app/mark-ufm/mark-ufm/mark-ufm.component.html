@@ -1,0 +1,95 @@
+<div class="card card-default">
+    <div class="card-heading">
+        <h5><b>Mark UFM</b></h5></div>
+    <div class="shadow border">
+    <div class="card-body">
+
+      <div [hidden]="submitted" class="submitted">
+      
+        
+          <form class="form-inline" (ngSubmit)="onSubmit(cancelForm)" #cancelForm="ngForm">
+       
+          <div class="form-group row">
+            <label class="col-xs-5" for="session ">Session Start Date/End Date </label>
+            <select class="form-control  input-sm" id="session "
+              required
+              [(ngModel)]="model.session " name="session "
+              #session="ngModel">
+              <option  [ngValue]="null">Select Session Dates</option>
+              <option *ngFor="let pow of dates" [value]="pow">{{pow}}</option>
+            </select>
+            <div [hidden]="session.valid" class="alert alert-danger">
+              
+              *Session Start Date/End Date is required
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="semester ">Semester/Module </label>
+            <select class="form-control input-sm" id="semester "
+                    required
+                    [(ngModel)]="model.semester " name="semester "
+                    #semester="ngModel">
+                    <option  [ngValue]="null">Select Semester/Module</option>
+              <option *ngFor="let pow of semesters" [value]="pow">{{pow}}</option>
+              
+            </select>
+            <div [hidden]="semester.valid" class="alert alert-danger">
+              <!-- <div [hidden]="semester.valid || semester.pristine" class="alert alert-danger">  -->
+               *Semester/Module is required 
+              
+            </div>
+          </div> 
+    
+          <div class="form-group">
+            <label for="issue ">Issue Type </label>
+            <select class="form-control input-sm" id="issue "
+                    required
+                    [(ngModel)]="model.issue " name="issue "
+                    #issue="ngModel">
+                    <option disabled [ngValue]="null">Select Issue Type</option>
+              <option *ngFor="let pow of issues" [value]="pow">{{pow}}</option>
+            </select>
+            <div [hidden]="issue.valid " class="alert alert-danger">
+               *Issue Type is required 
+              <!-- *Required -->
+            </div>
+          </div>
+
+            <div class="form-group">
+            <label class="col-xs-3" for="rollNumber">Roll Number </label>
+            
+            <input 
+               name="rollNumber" 
+               type="text" class="form-control col-xs-3" 
+               [formGroup]="formroll">
+              <div class="alert alert-danger" *ngIf="rollNumber.touched && !rollNumber.valid">
+                <div *ngIf="rollNumber.errors.required">roll Number is required</div>
+                <div *ngIf="rollNumber.errors.onlyNumber">Enter Only Digits</div>
+              </div>
+            <button class="btn1 btn-default"  [disabled]="(!cancelForm.valid || clicked)">Ok</button>
+            <button class="btn1 btn-default" (click)=" cancelForm.reset()">Cancel</button>
+        </div>
+
+            
+  
+          <!-- <div class="form-group">
+            <label for="rollNumber">Roll Number </label>
+            
+            <input type="text" class="form-control" id="rollNumber"
+                   required
+                   [(ngModel)]="model.rollNumber" name="rollNumber"
+                   #rollNumber="ngModel" NumberOnly>
+            <div [hidden]="rollNumber.valid " class="alert alert-danger">
+                  Roll Number is required 
+                 *Required
+            </div>
+           -->
+           <!-- <button type="Ok" class="btn btn-success" [disabled]="!cancelForm.form.valid">Ok</button> -->
+           <!-- <button type="Cancel" class="btn btn-default" (click)=" cancelForm.reset()">Cancel</button> -->
+          <!-- </div>  -->
+        </form>
+      </div>
+  
+    </div>
+  </div>

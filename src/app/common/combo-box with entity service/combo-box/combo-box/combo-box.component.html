@@ -1,0 +1,26 @@
+<!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="combo-container">
+  <span class="drop-down">
+    <input  type="text"
+            class="input-control"
+            [ngModel]="textToSort"
+            [ngStyle]="{'width.px': [vWidth]-26}"
+            (ngModelChange)="textChange($event)"
+            (keyup)="onKeyDownAction($event)" 
+            (focus)="onFocusEventAction()"  
+            (blur)="onBlurEventAction()"/>
+     <button class="drop-down-button"
+             (click)="toogleDropDown()">
+             <i class="fa fa-angle-down" aria-hidden="true"></i>
+     </button>
+  </span>
+  <div class="data-container" *ngIf="showDropDown"
+    [ngStyle]="{'height.px': [vHeight], 'width.px': [vWidth]}">
+     <p *ngFor="let data of dummyDataList; 
+                let i = index" class="data-list"
+        (click)="updateTextBox(data[columnName1]); setSelectedid(data[columnName2])"
+        [ngClass]="{highlight:checkHighlight(i)}">  
+        {{data[columnName1]}}
+     </p>
+  </div>
+ </div> -->

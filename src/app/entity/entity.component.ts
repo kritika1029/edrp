@@ -27,6 +27,7 @@ export class EntityComponent implements OnInit {
         {headerName: 'Course',field: 'course', sortable: true, filter: true}
     ];
 
+
     onSelectionChanged(__event: any) {
       this.selectedRows = this.gridApi.getSelectedRows();
       document.querySelector('#selectedRows').innerHTML =
@@ -34,7 +35,8 @@ export class EntityComponent implements OnInit {
       let navigationExtras: NavigationExtras= {
     };
         this.router.navigate(['/third/entity/evaluation']); 
-    }
+  }
+
     onGridReady(params: { api: any; columnApi: any; }) {
       this.gridApi = params.api;
       this.gridColumnApi = params.columnApi;
