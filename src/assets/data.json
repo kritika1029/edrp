@@ -4,7 +4,26 @@
     "specialisation":"NONE",
     "semester":"Semester 2",
     "course":"MAW201",
-    "evaluation":
+    "evaluate":
+   [
+    {
+        "cname":"hfeh",
+        "sname":"jwb",
+        "rule":"enf",
+        "mm":"jwh",
+        "tcmarks":"fb",
+        "order":"ejfjf"
+    
+    },
+    {
+        "cname":"hfeh",
+        "sname":"jwb",
+        "rule":"enf",
+        "mm":"jwh",
+        "tcmarks":"fb",
+        "order":"ejfjf"
+    
+    },
     {
         "cname":"hfeh",
         "sname":"jwb",
@@ -14,7 +33,10 @@
         "order":"ejfjf"
     
     }
+]
+
 },
+
 {
     "program": "INTEGRATED DUAL",
     "branch":"NONE",

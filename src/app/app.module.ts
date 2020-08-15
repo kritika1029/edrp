@@ -32,6 +32,7 @@ import { SetupLayout } from './setup-layout/setup-layout.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/course-evaluation-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenubarComponent } from './menubar/menubar.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddComponent,
     DropComponent,
     DropadddetailComponent,
+    MenubarComponent,
     
 
     
