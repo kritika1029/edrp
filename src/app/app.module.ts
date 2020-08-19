@@ -26,7 +26,7 @@ import { GridssComponent } from './gridss/gridss.component';
 import { ImageuploadComponent } from './imageupload/imageupload.component';
 import { DropadddetailComponent } from './dropadddetail/dropadddetail.component';
 import { CommonModule } from "@angular/common";
-
+import {NgSelectModule} from "@ng-select/ng-select"
 import { SetupLayout } from './setup-layout/setup-layout.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/course-evaluation-layout.component';
@@ -64,7 +64,7 @@ import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/cour
     CommonModule ,
     FormsModule,
     AppRoutingModule,
-    FormsModule,
+    NgSelectModule,
     ReactiveFormsModule,
     HttpClientModule,
     UploaderModule,
@@ -120,13 +120,16 @@ import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/cour
         path:'mastercourseadd',
         component:CoursesaddComponent,
         children:[
-      {path: 'data' ,component: GridssComponent  },
-      {path: 'add/drop' ,component: DropComponent  },
-      {path: 'add/drop' ,component: AddComponent  },
+      {path: 'data' ,component: GridssComponent,
+       children:[
+        {path: 'adddrop' ,component: AddComponent,
+      
+      children:[
       {path: 'selected' ,component: DropadddetailComponent  }
 
         ]}
-       
+      ]}
+    ]}
     ])
   ],
   providers: [],

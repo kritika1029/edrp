@@ -8,6 +8,10 @@
         Student Name: Lucky Dixit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Enrollment Number: 180486 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Roll Number: 1800908 
     </span>
+    <div class="example-header">
+        Selection:
+        <span id="selectedRows"></span>
+      </div>
         <br>
         <br>
 <ag-grid-angular
@@ -16,15 +20,18 @@
     [rowData]="rowData | async"
     [columnDefs]="columnDefs"
     
+    [rowSelection]="rowSelection"
+    (selectionChanged)="onSelectionChanged($event)"
+    (gridReady)="onGridReady($event)"
+   
+
     >
 </ag-grid-angular>
     </div>
 </div>
 <br>
-<app-drop></app-drop>
+<router-outlet></router-outlet>
 
-<br>
-<app-add></app-add>
 
 
 

@@ -24,7 +24,7 @@ export class EntityComponent implements OnInit {
         {headerName: 'Course',field: 'course', sortable: true, filter: true}
     ];
 
-    onSelectionChanged() {
+    onSelectionChanged($event) {
       var selectedRows = this.gridApi.getSelectedRows();
       document.querySelector('#selectedRows').innerHTML =
         selectedRows.length === 1 ? selectedRows[0].program : ' ';
