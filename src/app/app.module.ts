@@ -1,7 +1,7 @@
+import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { StemplateComponent } from './stemplate/stemplate.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { EntityComponent } from './entity/entity.component';
-import { RouterModule } from '@angular/router';
 import { EnrollmentComponent } from './student-setup/enrollment.component';
 import { ContactComponent } from './personal-details/contact.component';
 import { Setup2Component } from './student-setup/setup2.component';
@@ -15,7 +15,6 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
 import { AwardBlankComponent } from './award-blank/award-blank.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
-import { UploaderModule  } from '@syncfusion/ej2-angular-inputs';
 import { FinalregistrationComponent } from './finalregistration/finalregistration.component';
 import { Finalreg2Component } from './finalreg2/finalreg2.component';
 import { GriddataComponent } from './griddata/griddata.component';
@@ -30,6 +29,22 @@ import {NgSelectModule} from "@ng-select/ng-select"
 import { SetupLayout } from './setup-layout/setup-layout.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/course-evaluation-layout.component';
+
+import { MarkUfmComponent } from './mark-ufm/mark-ufm/mark-ufm.component';
+import { EditNameInHindiComponent } from './edit-name-in-hindi (master)/edit-name-in-hindi/edit-name-in-hindi.component';
+import { EditNameDataGridComponent } from './editname-datagrid/edit-name-data-grid/edit-name-data-grid.component';
+import { RollnumberComponent } from './cancel-final-registration/rollnumber/rollnumber.component';
+import { CoursedetailsComponent } from './cancel-final-registration/coursedetails/coursedetails.component';
+import { StudentdetailsComponent } from './cancel-final-registration/studentdetails/studentdetails.component';
+import { AcademicDetailsComponent } from './cancel-final-registration/studentdetails/academic-details/academic-details.component';
+import { SemesterDetailsComponent } from './cancel-final-registration/studentdetails/semester-details/semester-details.component';
+import { ComboBoxComponent } from './common/combo-box with entity service/combo-box/combo-box/combo-box.component';
+// import { ServiceService } from './service/service.service';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MenubarComponent } from './menubar/menubar.component';
+
 
 @NgModule({
   declarations: [
@@ -46,6 +61,15 @@ import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/cour
     EntityComponent,
     EvaluationComponent,
     StemplateComponent,
+    MarkUfmComponent,
+    EditNameInHindiComponent,
+    EditNameDataGridComponent,
+    RollnumberComponent,
+    CoursedetailsComponent,
+    StudentdetailsComponent,
+    AcademicDetailsComponent,
+    SemesterDetailsComponent,
+    ComboBoxComponent,
     ImageuploadComponent,
     FinalregistrationComponent,
     Finalreg2Component,
@@ -55,8 +79,8 @@ import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/cour
     AddComponent,
     DropComponent,
     DropadddetailComponent,
+    MenubarComponent
     
-
     
   ],
   imports: [
@@ -67,71 +91,14 @@ import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/cour
     NgSelectModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgSelectModule,
+    BrowserAnimationsModule,
     UploaderModule,
-    AgGridModule.withComponents([]),
-    RouterModule.forRoot([
-      {
-        path:'', redirectTo:'/home', pathMatch:'full'
-      },
-      {
-        path:'first',
-        component:SetupLayout,
-        children:[
-          {
-            path:'form',
-            component:StudentSetupComponent
-          }
-        ]
-      },
-      {
-        path:'home',
-        component:HomeComponent
-      },
-      {
-        path:'second',
-        component:AwardBlankComponent
-      },
-      {
-        path:'third',
-        component:CourseEvaluationLayoutComponent,
-        children:[
-          {
-            path:'select-template',
-            component:StemplateComponent
-          },
-          {
-            path:'entity',
-            component:EntityComponent
-          }    ]},
-          {
-            path:'upload1',
-            component:ImageuploadComponent
-          },
-          {
-            path:'fregister',
-            component:FinalregistrationComponent,
-            children:[
-          {path: 'registration', component: Finalreg2Component},
-          {path: 'registration', component: GriddataComponent}
-        
-        ]
-      },
-      {
-        path:'mastercourseadd',
-        component:CoursesaddComponent,
-        children:[
-      {path: 'data' ,component: GridssComponent,
-       children:[
-        {path: 'adddrop' ,component: AddComponent,
-      
-      children:[
-      {path: 'selected' ,component: DropadddetailComponent  }
 
-        ]}
-      ]}
-    ]}
-    ])
-  ],
+
+    AgGridModule.withComponents([])
+],
+
   providers: [],
   bootstrap: [AppComponent]
 })

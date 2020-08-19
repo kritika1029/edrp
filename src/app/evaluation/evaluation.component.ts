@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -7,12 +7,30 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./evaluation.component.css']
 })
 export class EvaluationComponent implements OnInit {
-  rowData: any;
+  @Input() selectedRows: any;
+  rowData : object [];
+  httpService: any;
+  arrCase: object[];
+  data: any;
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
+
+  
 
   ngOnInit(): void {
-    this.rowData = this.http.get('');
+   /* this.httpService.get('./assets/data.json').subscribe(
+      data => {
+      this.arrCase = data as object [];  // FILL THE ARRAY WITH DATA.
+      console.log(this.arrCase);
+      this.rowData = this.selectedRows["evaluate"];
+    console.log(this.rowData);
+      
+      }
+      );
+      
+    */
+   this.rowData=history.state.selectedRows;
+   
   }
   columnDefs = [
         {headerName: 'Component Name',field: 'cname', sortable: true, filter: true},
@@ -22,6 +40,5 @@ export class EvaluationComponent implements OnInit {
         {headerName: 'Total Component Marks',field: 'tcmarks', sortable: true, filter: true},
         {headerName: 'Order in Marks',field: 'order', sortable: true, filter: true}
     ];
-
-
+   
 }

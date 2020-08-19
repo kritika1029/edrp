@@ -1,0 +1,145 @@
+
+    <form class="form-inline" (ngSubmit)="onSubmit(detailsForm)" #detailsForm="ngForm">
+
+    <div class="card card-default">
+        <div class="card-heading">
+            <h5><b>Edit Name in Hindi( Master)</b></h5></div>
+        <div class="shadow border">
+        <div class="card-body">
+
+      <!-- <form class="form-inline" (ngSubmit)="onSubmit(detailsForm)" #detailsForm="ngForm"> -->
+    <!-- <div class="content"> -->
+      <div class="form-group">
+          <label for="session ">Session*: </label>
+
+          <!-- <combo-box [dataList] = "sessionList" [vHeight] = 50
+                 [columnName1] = "'sessionYr'"
+                 [columnName2] = "'sessionfrom'"
+                 (valueChange) = "getSelectedSession($event)">
+          </combo-box> -->
+          <select class="form-control" id="session "
+            required
+            [(ngModel)]="session " name="session ">
+            <option  [ngValue]="null">Select Session </option>
+            <option *ngFor="let pow of session" [value]="pow.id">{{pow.name}}</option>
+          </select>
+           <div [hidden]="session" class="alert alert-danger"> 
+            *Required
+            Session Start Date/End Date is required
+          </div> 
+        </div>
+  
+        <div class="form-group">
+          <label for="program ">Program*: </label>
+
+          <!-- <combo-box 
+                     [dataList] = "prgList" 
+                     [vHeight] = 120 [vWidth] = 276
+                     [columnName1] = "'program_name'"
+                     [columnName2] = "'program_id'"
+                     (valueChange) = "getSelectedProgramId($event)" >
+          </combo-box> -->
+          <select class="form-control" id="program "
+            required
+            [(ngModel)]="program " name="program ">
+            <option  [ngValue]="null">Select Program </option>
+            <option *ngFor="let pow of program" [value]="pow.id">{{pow.name}}</option>
+          </select>
+          <div [hidden]="program" class="alert alert-danger">
+            *Required
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="specialization ">Specialization*: </label>
+
+          <!-- <combo-box [dataList] = "spList" 
+                 [vHeight] = 50  
+                 [columnName1] = "'specialization_name'"
+                 [columnName2] = "'specialization_id'"
+                 (valueChange) = "getSelectedSp($event)">
+        </combo-box> -->
+          <select class="form-control" id="specialization "
+            required
+            [(ngModel)]="specialization " name="specialization ">
+            <option  [ngValue]="null">Select Specialization </option>
+            <option *ngFor="let pow of specialization" [value]="pow.id">{{pow.name}}</option>
+          </select>
+          <div [hidden]="specialization" class="alert alert-danger">
+            *Required
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label for="entity " >Entity*: </label>
+
+          <!-- <combo-box [dataList] = "dataList" 
+                 [vHeight] = 120 [vWidth] = 276
+                 [columnName1] = "'entity_name'"
+                 [columnName2] = "'entity_id'"
+                 (valueChange) = "getSelectedEntityId($event)" >
+          </combo-box>  -->
+          <select class="form-control" id="entity "
+            required
+            [(ngModel)]="entity " name="entity ">
+            <option  [ngValue]="null">Select Entity </option>
+            <option *ngFor="let pow of entity" [value]="pow.id">{{pow.name}}</option>
+          </select>
+          <div [hidden]="entity" class="alert alert-danger">
+            *Required
+          </div>
+        </div>
+      
+  
+  
+        <div class="form-group">
+          <label for="branch ">Branch*: </label>
+
+          <!-- <combo-box [dataList] = "brList" [vHeight] = 50
+                 [columnName1] = "'branch_name'"
+                 [columnName2] = "'branch_id'"
+                 (valueChange) = "getSelectedBranch($event)">
+        </combo-box> -->
+          <select class="form-control" id="branch "
+            required
+            [(ngModel)]="branch " name="branch ">
+            <option  [ngValue]="null">Select Branch </option>
+            <option *ngFor="let pow of branch" [value]="pow.id">{{pow.name}}</option>
+          </select>
+          <div [hidden]="branch" class="alert alert-danger">
+            *Required
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="semester ">Semester/Module*: </label>
+
+          <!-- <combo-box [dataList] = "semList" 
+                 [vHeight] = 100  [vWidth] = 120
+                 [columnName1] = "'semester'"
+                 [columnName2] = "'sem_code'"
+                 (valueChange) = "getSelectedSem($event)">
+          </combo-box> -->
+          <select class="form-control" id="semester "
+            required
+            [(ngModel)]="semester " name="semester ">
+            <option  [ngValue]="null">Select Semester/Module </option>
+            <option *ngFor="let pow of semester" [value]="pow.id">{{pow.name}}</option>
+          </select>
+          <div [hidden]="semester" class="alert alert-danger">
+            *Required
+          </div>
+        </div>
+      
+      <button type="Ok" class="btn1 btn-default" routerLink="/fivth/editname-datagrid" [disabled]="!detailsForm.form.valid">Ok</button>
+    <router-outlet></router-outlet> 
+    <!-- </div> -->
+    
+    <!-- </form> -->
+      </div>
+    </div>
+    </div>
+  </form>
+  
+  
+     
