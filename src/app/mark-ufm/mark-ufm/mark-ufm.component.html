@@ -10,84 +10,78 @@
           <form class="form-inline" (ngSubmit)="onSubmit(cancelForm)" #cancelForm="ngForm">
        
           <div class="form-group row">
-            <label class="col-xs-5" for="session ">Session Start Date/End Date </label>
+            <label class="col-1.5 col-form-label" for="session ">Session Start Date/End Date </label>
+            <div class="col">
             <select class="form-control  input-sm" id="session "
               required
               [(ngModel)]="model.session " name="session "
               #session="ngModel">
               <option  [ngValue]="null">Select Session Dates</option>
-              <option *ngFor="let pow of dates" [value]="pow">{{pow}}</option>
+              <option *ngFor="let ses of dates" [value]="ses">{{ses}}</option>
             </select>
-            <div [hidden]="session.valid" class="alert alert-danger">
-              
-              *Session Start Date/End Date is required
             </div>
+            <div [hidden]="session.valid || semester.pristine" class="alert alert-danger">
+              required
+            </div>
+            
           </div>
   
           <div class="form-group">
-            <label for="semester ">Semester/Module </label>
+            <label class="col-1.5 col-form-label" for="semester ">Semester/Module </label>
+            <div class="col">
             <select class="form-control input-sm" id="semester "
                     required
                     [(ngModel)]="model.semester " name="semester "
                     #semester="ngModel">
                     <option  [ngValue]="null">Select Semester/Module</option>
-              <option *ngFor="let pow of semesters" [value]="pow">{{pow}}</option>
+              <option *ngFor="let sem of semesters" [value]="sem">{{sem}}</option>
               
             </select>
-            <div [hidden]="semester.valid" class="alert alert-danger">
-              <!-- <div [hidden]="semester.valid || semester.pristine" class="alert alert-danger">  -->
-               *Semester/Module is required 
+            </div>
+            <div [hidden]="semester.valid || semester.pristine" class="alert alert-danger">
+              
+               required 
               
             </div>
           </div> 
     
           <div class="form-group">
-            <label for="issue ">Issue Type </label>
+            <label class="col-1.5 col-form-label" for="issue ">Issue Type </label>
+            <div class="col">
             <select class="form-control input-sm" id="issue "
                     required
                     [(ngModel)]="model.issue " name="issue "
                     #issue="ngModel">
-                    <option disabled [ngValue]="null">Select Issue Type</option>
-              <option *ngFor="let pow of issues" [value]="pow">{{pow}}</option>
+                    <option  [ngValue]="null">Select Issue Type</option>
+              <option *ngFor="let iss of issues" [value]="iss">{{iss}}</option>
             </select>
-            <div [hidden]="issue.valid " class="alert alert-danger">
-               *Issue Type is required 
-              <!-- *Required -->
+            </div>
+            <div [hidden]="issue.valid || semester.pristine" class="alert alert-danger">
+               required 
+              
             </div>
           </div>
 
-            <div class="form-group">
-            <label class="col-xs-3" for="rollNumber">Roll Number </label>
-            
+            <div class="form-group row">
+              <div class="w-70 d-inline-block col">
+                <div class="row">
+            <label class="col-1.5 col-form-label" for="rollNumber">Roll Number </label>
+            <div class="col">
             <input 
                name="rollNumber" 
-               type="text" class="form-control col-xs-3" 
+               type="text" class="form-control" 
                [formGroup]="formroll">
+            </div>
               <div class="alert alert-danger" *ngIf="rollNumber.touched && !rollNumber.valid">
                 <div *ngIf="rollNumber.errors.required">roll Number is required</div>
                 <div *ngIf="rollNumber.errors.onlyNumber">Enter Only Digits</div>
               </div>
+            </div>
             <button class="btn1 btn-default"  [disabled]="(!cancelForm.valid || clicked)">Ok</button>
             <button class="btn1 btn-default" (click)=" cancelForm.reset()">Cancel</button>
+          
         </div>
-
-            
-  
-          <!-- <div class="form-group">
-            <label for="rollNumber">Roll Number </label>
-            
-            <input type="text" class="form-control" id="rollNumber"
-                   required
-                   [(ngModel)]="model.rollNumber" name="rollNumber"
-                   #rollNumber="ngModel" NumberOnly>
-            <div [hidden]="rollNumber.valid " class="alert alert-danger">
-                  Roll Number is required 
-                 *Required
-            </div>
-           -->
-           <!-- <button type="Ok" class="btn btn-success" [disabled]="!cancelForm.form.valid">Ok</button> -->
-           <!-- <button type="Cancel" class="btn btn-default" (click)=" cancelForm.reset()">Cancel</button> -->
-          <!-- </div>  -->
+      </div>
         </form>
       </div>
   

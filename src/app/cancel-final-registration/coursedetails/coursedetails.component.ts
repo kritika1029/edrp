@@ -7,28 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursedetailsComponent implements OnInit {
 
-  public program: Object[];
-  public session: Object[];
-  // constructor() { }
+  programs = [
+      {id:1, name: 'B.ED'},
+      {id:2, name: 'B.Tech'},
+      {id:3, name: 'B.Sc'},
+      {id:4, name: 'Diploma'},
+      {id:5, name: 'Law'},
+  ];
 
-  ngOnInit()  {
-
-    this.program= [
-      {id:1, name: 'B.ED.'},
-      {id:2, name: ''},
-      {id:3, name: ''},
-      {id:4, name: ''},
-      {id:5, name: ''},
-       ];
-
-    this.session= [
-        {id:1, name: 2020},
-        {id:2, name: 2019},
-        {id:3, name: 2018},
-        {id:4, name: 2017},
-        {id:5, name: 2016},
-      ]; 
+  sessions= [
+    {id:1, name: 2020},
+    {id:2, name: 2019},
+    {id:3, name: 2018},
+    {id:4, name: 2017},
+    {id:5, name: 2016},
+  ]; 
+    
+  selected = [];
+   
+  getSelectedValue(){
+    console.log(this.selected);
   }
+
+  ngOnInit()  {}
 
  
 

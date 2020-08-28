@@ -16,7 +16,7 @@ export class AwardBlankComponent implements OnInit{
     this.form=fb.group({
       sessionAndEntity:fb.group({
         session:['',Validators.required],
-        searchentity:['',Validators.required]
+        
       }),
       column1:fb.group({
         entity:['',Validators.required],

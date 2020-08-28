@@ -1,6 +1,5 @@
-import { FormGroup,FormControl,Validators } from '@angular/forms';
+import { FormGroup,Validators } from '@angular/forms';
 import { Component, Input, OnInit } from '@angular/core';
-
 @Component({
   selector: 'contact',
   templateUrl: './contact.component.html',
@@ -9,16 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
   
 })
 export class ContactComponent implements OnInit {
- 
-  
-  constructor() { }
   
   
-  
- 
-    ngOnInit(){
-     
-     
+  constructor() { 
+    
+  } 
+    ngOnInit(){      
   }
   
  
@@ -59,5 +54,7 @@ export class ContactComponent implements OnInit {
     {"code": "UK","name": "Uttarakhand"},
     {"code": "UP","name": "Uttar Pradesh"},
     {"code": "WB","name": "West Bengal"}];
+
+     
         
 }

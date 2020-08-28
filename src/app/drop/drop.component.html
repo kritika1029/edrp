@@ -1,6 +1,6 @@
 <div class="card ">
     <div class="card-header"><h6>Select Course(s) to be dropped </h6>
-      <div class="text-right" ><a   role="button" routerLink="/mastercourseadd/data/selected">Drop</a> </div> 
+      <div class="text-right" ><a   role="button" (click)="onSelect()" routerLink="/mastercourseadd/data/selected">Drop</a> </div> 
     </div>
     <div class="card-body">
         <ag-grid-angular
@@ -9,6 +9,9 @@
         [rowData]="rowData | async"
         [columnDefs]="columnDefs"
         rowSelection="multiple"
+        [rowMultiSelectWithClick]="true"
+        (rowSelected)="onRowSelected($event)"
+    (selectionChanged)="onSelectionChanged($event)"
         >
     </ag-grid-angular>
     </div>

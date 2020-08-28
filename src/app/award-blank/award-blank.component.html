@@ -1,6 +1,6 @@
 <form class="form-horizontal container" #form1="ngForm" (ngSubmit)="submit(form1)"  [formGroup]="form">
     <div class="card card-default shadow">
-        <div class="card-heading"><h4>&nbsp; Award Blank Reports</h4></div>
+        <div class="card-header"><h4>&nbsp; Award Blank Reports</h4></div>
         <div class="shadow border">
         <div class="card-body">
            
@@ -16,16 +16,11 @@
                 
             
                 <div class="col-6">                    
-                    <label class="control-label">Search Entity</label>
+                    
                     <div class="row">
                         <div class="col">
                             
-                                <ng-select formControlName="searchentity"
-                                class="wid" [items]="entities"
-                                            bindLabel="name"
-                                           placeholder="Select item"
-                                            appendTo="body"
-                                           [(ngModel)]="selected"></ng-select>
+                                
                    
                           </div>
                           
@@ -52,12 +47,12 @@
             <div class="row">
                 <div class="col form-group"  formGroupName="column1">
                     <label for="">Entity*</label>
-                    <select name="entity" id="" 
-                            class="form-control" formControlName="entity">
-                        <option value="">Select</option>
-                        <option value="">
-                        </option>
-                    </select>
+                    <ng-select formControlName="entity"
+                                class="wid" [items]="entities"
+                                            bindLabel="name"
+                                           placeholder="Select item"
+                                            appendTo="body"
+                                           [(ngModel)]="selected"></ng-select>
                     <label for="">Branch*</label>
                     <select name="" id="" class="form-control" formControlName="branch">
                         <option value="">Select</option>

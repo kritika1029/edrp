@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
 export class ServiceService {
   httpOption= { headers:{ 'content':"application/json", 'content-type':"application/x-www-form-urlencoded" } };
   urlName="http://localhost:8080/";
-  private getEntityUrl=this.urlName+"Admission_Panel/login/loadEntity.htm";
-  private getprogram = this.urlName+"Admission_Panel/login/loadProgram.htm";
+  private getEntityUrl=this.urlName+"CMS_App/login/loadEntity.htm";
+  private getprogram = this.urlName+"CMS_App/login/loadProgram.htm";
 
   constructor(private http: HttpClient) { }
   /*getEntities() : Observable<entityListBean[]>
