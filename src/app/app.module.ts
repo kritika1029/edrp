@@ -25,10 +25,11 @@ import { GridssComponent } from './gridss/gridss.component';
 import { ImageuploadComponent } from './imageupload/imageupload.component';
 import { DropadddetailComponent } from './dropadddetail/dropadddetail.component';
 import { CommonModule } from "@angular/common";
+import {NgSelectModule} from "@ng-select/ng-select"
 import { SetupLayout } from './setup-layout/setup-layout.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/course-evaluation-layout.component';
-import {NgSelectModule} from "@ng-select/ng-select"
+
 import { MarkUfmComponent } from './mark-ufm/mark-ufm/mark-ufm.component';
 import { EditNameInHindiComponent } from './edit-name-in-hindi (master)/edit-name-in-hindi/edit-name-in-hindi.component';
 import { EditNameDataGridComponent } from './editname-datagrid/edit-name-data-grid/edit-name-data-grid.component';
