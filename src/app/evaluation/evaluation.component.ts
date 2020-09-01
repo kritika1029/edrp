@@ -8,10 +8,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EvaluationComponent implements OnInit {
   @Input() selectedRows: any;
-  rowData : object [];
-  httpService: any;
   arrCase: object[];
   data: any;
+  gridApi: any;
+  gridColumnApi: any;
 
   constructor() { }
 
@@ -29,16 +29,17 @@ export class EvaluationComponent implements OnInit {
       );
       
     */
-   this.rowData=history.state.selectedRows;
-   
   }
   columnDefs = [
-        {headerName: 'Component Name',field: 'cname', sortable: true, filter: true},
-        {headerName: 'Short Name',field: 'sname', sortable: true, filter: true },
-        {headerName: 'Rule',field: 'rule', sortable: true, filter: true},
-        {headerName: 'Maximum Marks',field: 'mm', sortable: true, filter: true },
-        {headerName: 'Total Component Marks',field: 'tcmarks', sortable: true, filter: true},
-        {headerName: 'Order in Marks',field: 'order', sortable: true, filter: true}
-    ];
-   
+    {headerName: 'Program',field: 'program', sortable: true, filter: true, checkboxSelection: true },
+    {headerName: 'Branch',field: 'branch', sortable: true, filter: true },
+    {headerName: 'Specialisation',field: 'specialisation', sortable: true, filter: true},
+    {headerName: 'Semester',field: 'semester', sortable: true, filter: true },
+    {headerName: 'Course',field: 'course', sortable: true, filter: true}
+];
+
+    onGridReady(params: { api: any; columnApi: any; }) {
+      this.gridApi = params.api;
+      this.gridColumnApi = params.columnApi;
+    }
 }

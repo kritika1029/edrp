@@ -1,10 +1,10 @@
 <form class="form-horizontal container" #form1="ngForm" (ngSubmit)="submit(form1)"  [formGroup]="form">
     <div class="card card-default shadow">
-        <div class="card-header"><h4>&nbsp; Award Blank Reports</h4></div>
+        <div class="card-header"><h5>&nbsp; Award Blank Reports</h5></div>
         <div class="shadow border">
         <div class="card-body">
            
-            <div class="form-group" formGroupName="sessionAndEntity">
+            <div class="form-group">
                 <div class="row">
                 <div class="col-5">
                     <label class="control-label col-4">Session*</label>
@@ -45,48 +45,59 @@
             </div>
             </div>
             <div class="row">
-                <div class="col form-group"  formGroupName="column1">
+                <div class="col form-group">
                     <label for="">Entity*</label>
                     <ng-select formControlName="entity"
-                                class="wid" [items]="entities"
-                                            bindLabel="name"
-                                           placeholder="Select item"
-                                            appendTo="body"
-                                           [(ngModel)]="selected"></ng-select>
+                                class="wid" [items]="dataList"
+                                            bindLabel="entity_name"
+                                           placeholder="Select"
+                                            appendTo="body"></ng-select>
                     <label for="">Branch*</label>
-                    <select name="" id="" class="form-control" formControlName="branch">
-                        <option value="">Select</option>
-                        <option value=""></option>
-                    </select>
+                    
+                    <ng-select formControlName="branch"
+                                class="" [items]=""
+                                            bindLabel=""
+                                           placeholder="Select"
+                                            appendTo="body"></ng-select>
                     <label for="">Semester*</label>
                     <select name="" id="" class="form-control" formControlName="semester">
                         <option value="">Select</option>
                         <option *ngFor="let sem of semester" [ngValue]="sem">{{sem}}</option>
                     </select>
+                    
                    
                 </div>
 
-                <div class="col form-group" formGroupName="column2">
+                <div class="col form-group">
                     <label for="">Program*</label>
-                    <select name="" id="" class="form-control" formControlName="program">
-                        <option value="">Select</option>
-                        <option value=""></option>
-                    </select>
+            
+                    <ng-select formControlName="program"
+                                class="" [items]=""
+                                            bindLabel=""
+                                           placeholder="Select"
+                                            appendTo="body"></ng-select>
                     <label for="">Specialisation*</label>
-                    <select name="" id="" class="form-control" formControlName="specialisation">
-                        <option value="">Select</option>
-                        <option value=""></option>
-                    </select>
+                    
+                    <ng-select formControlName="specialisation"
+                                class="" [items]=""
+                                            bindLabel=""
+                                           placeholder="Select"
+                                            appendTo="body"></ng-select>
                     <label for="">Course Code*</label>
-                    <select name="" id="" class="form-control" formControlName="coursecode">
-                        <option value="">Select</option>
-                        <option value=""></option>
-                    </select>
+                    
+                    <ng-select formControlName="coursecode"
+                                class="" [items]=""
+                                            bindLabel=""
+                                           placeholder="Select"
+                                            appendTo="body"></ng-select>
+
                     <label for="">Award Blank Type*</label>
-                    <select name="" id="" class="form-control" formControlName="awardtype">
-                        <option value="">Select</option>
-                        <option value=""></option>
-                    </select>
+                    
+                    <ng-select formControlName="awardtype"
+                                class="" [items]=""
+                                            bindLabel=""
+                                           placeholder="Select"
+                                            appendTo="body"></ng-select>
                     
                 </div>
             </div>

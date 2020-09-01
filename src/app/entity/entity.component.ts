@@ -12,7 +12,8 @@ export class EntityComponent implements OnInit {
   gridApi: any;
   rowSelection = 'single';
   gridColumnApi: any;
-  selectedRows: string | any[];
+  public selectedRows: string | any[]= null;
+  public row;
   
   constructor(private router: Router,private http: HttpClient) { }
 
@@ -30,11 +31,13 @@ export class EntityComponent implements OnInit {
 
     onSelectionChanged(__event: any) {
       this.selectedRows = this.gridApi.getSelectedRows();
+      
+      this.row=JSON.stringify(this.selectedRows[0].evaluate);
       document.querySelector('#selectedRows').innerHTML =
-      this.selectedRows.length === 1 ? this.selectedRows[0].evaluate : '';
+      this.selectedRows.length === 1 ? this.row : '';
       let navigationExtras: NavigationExtras= {
     };
-        this.router.navigate(['/third/entity/evaluation']); 
+      //  this.router.navigate(['/third/entity/evaluation']); 
   }
 
     onGridReady(params: { api: any; columnApi: any; }) {

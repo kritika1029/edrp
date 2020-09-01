@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-md navbar-light">
+    <a class="navbar-brand pb-2" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
+    aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" [ngbCollapse]="isCollapsed">
+        <menubar></menubar>
+    </div>
+</nav>

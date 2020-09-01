@@ -22,6 +22,7 @@
         "mm":"jwh",
         "tcmarks":"fb",
         "order":"ejfjf"
+        
     
     },
     {
@@ -31,6 +32,7 @@
         "mm":"jwh",
         "tcmarks":"fb",
         "order":"ejfjf"
+
     
     }
 ]
@@ -42,19 +44,22 @@
     "branch":"NONE",
     "specialisation":"NONE",
     "semester":"Semester 2",
-    "course":"MAW201"  
+    "course":"MAW201" ,
+    "evaluate":[{}] 
 },
 {
     "program": "B.Ed",
     "branch":"NONE",
     "specialisation":"NONE",
     "semester":"Semester 2",
-    "course":"MAW201"  
+    "course":"MAW201" ,
+    "evaluate":[{}] 
 },
 {
     "program": "M.Ed",
     "branch":"NONE",
     "specialisation":"NONE",
     "semester":"Semester 2",
-    "course":"MAW201"  
+    "course":"MAW201" ,
+    "evaluate":[{}] 
 }]

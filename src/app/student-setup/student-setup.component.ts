@@ -11,7 +11,7 @@ export class StudentSetupComponent implements OnInit{
   formenroll:FormGroup;
   ngOnInit(){
     
-     
+    
   }
   
    /*

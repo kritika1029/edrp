@@ -1,5 +1,7 @@
-import { FormGroup,Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { Component, Input, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+
 @Component({
   selector: 'contact',
   templateUrl: './contact.component.html',
@@ -8,13 +10,29 @@ import { Component, Input, OnInit } from '@angular/core';
   
 })
 export class ContactComponent implements OnInit {
+  url = "././assets/js/check.js";
+  loadAPI: Promise<unknown>;
   
-  
-  constructor() { 
+  constructor(private router: Router) { 
     
   } 
-    ngOnInit(){      
+    ngOnInit(){  
+      this.loadAPI = new Promise(resolve => {
+        console.log("resolving promise...");
+        this.loadScript();
+      });
+      
   }
+  public loadScript() {
+    console.log("preparing to load...");
+    let node = document.createElement("script");
+    node.src = this.url;
+    node.type = "text/javascript";
+    node.async = true;
+    node.charset = "utf-8";
+    document.getElementsByTagName("head")[0].appendChild(node);
+}
+  
   
  
   @Input() form:FormGroup;

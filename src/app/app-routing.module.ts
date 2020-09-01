@@ -59,15 +59,15 @@ const routes: Routes = [
         path:'entity',
 
         component:EntityComponent,
-        children:[
+        /*children:[
           {
             path:'evaluation',
             component:EvaluationComponent
           }
         ]
+        */
       }          
     ]
-
   },
   {
     path:'forth',

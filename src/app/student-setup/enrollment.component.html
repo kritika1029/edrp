@@ -10,6 +10,9 @@
         <div *ngIf="enrollment.errors.required">Enrollment Number is required</div>
         <div *ngIf="enrollment.errors.onlyNumber">Enter Only Digits</div>
         </div>
-    <button class="btn btn-primary right" routerLink="/first/form" (click)="clicked = true;" [disabled]="(!f.valid || clicked)">Submit</button>
+    <button class="btn btn-primary right"  (click)="clicked = true;" [disabled]="(!f.valid || clicked)" 
+    routerLink="/first/form">
+        Submit
+    </button>
 </div>
 </form>

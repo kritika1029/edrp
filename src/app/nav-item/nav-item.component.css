@@ -1,5 +1,6 @@
-li:hover > ul.dropdown-menu {
+.navbar-nav li:hover > ul.dropdown-menu {
     display: block;
+    background-color: lightgrey;
 }
 .dropdown-submenu {
     position:relative;
@@ -8,6 +9,7 @@ li:hover > ul.dropdown-menu {
     top: 0;
     left: 100%;
     margin-top:-6px;
+    background-color: lightgrey;
 }
 
 /* rotate caret on hover */
@@ -17,5 +19,5 @@ li:hover > ul.dropdown-menu {
 } 
 .navbar
 {
-    background-color: lightskyblue;
+    background-color: lightgrey;
 }

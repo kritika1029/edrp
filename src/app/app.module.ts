@@ -26,7 +26,6 @@ import { GridssComponent } from './gridss/gridss.component';
 import { ImageuploadComponent } from './imageupload/imageupload.component';
 import { DropadddetailComponent } from './dropadddetail/dropadddetail.component';
 import { CommonModule } from "@angular/common";
-
 import { SetupLayout } from './setup-layout/setup-layout.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { CourseEvaluationLayoutComponent } from './course-evaluation-layout/course-evaluation-layout.component';
@@ -41,10 +40,13 @@ import { AcademicDetailsComponent } from './cancel-final-registration/studentdet
 import { SemesterDetailsComponent } from './cancel-final-registration/studentdetails/semester-details/semester-details.component';
 import { ComboBoxComponent } from './common/combo-box with entity service/combo-box/combo-box/combo-box.component';
 // import { ServiceService } from './service/service.service';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ServiceService } from './service/service.service';
+import { NavItemComponent } from './nav-item/nav-item.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MenubarComponent } from './menubar/menubar.component';
+import { MenubarLayoutComponent } from './menubar-layout/menubar-layout.component';
 
 
 @NgModule({
@@ -80,7 +82,9 @@ import { MenubarComponent } from './menubar/menubar.component';
     AddComponent,
     DropComponent,
     DropadddetailComponent,
-    MenubarComponent
+    NavItemComponent,
+    MenubarComponent,
+    MenubarLayoutComponent
     
     
   ],
@@ -95,9 +99,10 @@ import { MenubarComponent } from './menubar/menubar.component';
     NgSelectModule,
     BrowserAnimationsModule,
     UploaderModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    NgbModule
 ],
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
