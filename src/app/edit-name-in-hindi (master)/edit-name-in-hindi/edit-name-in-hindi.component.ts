@@ -1,9 +1,10 @@
 import { Component, EventEmitter } from '@angular/core';
-import { NgSelectOption, NgForm } from '@angular/forms';
+import {  NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-// import { entityListBean } from '../bean/entityListBean';
-// import { programListBean } from './bean/programListBean';
-// import { ServiceService } from './service/service.service';
+import { entityListBean } from 'src/app/bean/entityListBean';
+import { programListBean } from 'src/app/bean/programListBean';
+import { ServiceService } from 'src/app/service/service.service';
+// import {TranslateService} from '@ngx-translate/core';
 
 
 
@@ -14,33 +15,92 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EditNameInHindiComponent {
 
+  public session: Object[];
+  public program: Object[];
+  public specialization: Object[];
+  public entity: Object[];
+  public branch: Object[];
+  public semester: Object[];
 //   textToSort: any;
-//   dataList: entityListBean[];
+  // public entity: entityListBean[];
+  public dataList: entityListBean[];
 //   semList: any;
 //   sessionList: any;
 //   dummyDataList: any;
 //   showDropDown: boolean;
 //   selectedEntity: string= "";
-//   selectedEntityId: string= "";
-//   selectedProgramId: string= "";
+  selectedEntityId: string= "";
+  selectedProgramId: string= "";
 //   selectedBrId: string="";
 //   selectedSpId: string="";
 //   selectedSemCode: string= "";
 //   selectedSessionYr: string = "";
-//   prgBrSpList: programListBean[] =[];
-//   prgList: programListBean[] = [];
-//   brList: programListBean[] = [];
-//   spList: programListBean[] = [];
+  prgBrSpList: programListBean[] =[];
+  prgList: programListBean[] = [];
+  brList: programListBean[] = [];
+  spList: programListBean[] = [];
 //   courseObject: any;
-//   valA="";
-//   valB="";
+  valA="";
+  valB="";
+
+specializations= [
+  {id:1, name: 'None'},
+  {id:2, name: 'CS'},
+  {id:3, name: 'Electronics'},
+  {id:4, name: 'Core'},
+  {id:5, name: 'Designs'},
+  ];
+
+programs = [
+    {id:1, name: 'B.ED'},
+    {id:2, name: 'B.Tech'},
+    {id:3, name: 'B.Sc'},
+    {id:4, name: 'Diploma'},
+    {id:5, name: 'Law'},
+];
+
+sessions= [
+  {id:1, name: 2020},
+  {id:2, name: 2019},
+  {id:3, name: 2018},
+  {id:4, name: 2017},
+  {id:5, name: 2016},
+]; 
+
+entities= [
+  {id:1, name: 'FACULTY OF ARTS'},
+  {id:2, name: 'FACULTY OF ENGINEERING'},
+  {id:3, name: 'FACULTY OF EDUCATION'},
+  {id:4, name: 'FACULTY OF SCIENCE'},
+  {id:5, name: 'FACULTY OF SOCIAL SCIENCE'},
+];
+
+branches= [
+  {id:1, name: 'Civil'},
+  {id:2, name: 'Electrical'},
+  {id:3, name: 'Footwear'},
+  {id:4, name: 'Mechanical'},
+  {id:5, name: 'None'},
+];
+
+semesters= [
+  {id:1, name: 'SM1'},
+  {id:2, name: 'SM2'},
+  {id:3, name: 'SM3'},
+  {id:4, name: 'SM4'},
+  {id:5, name: 'SM5'},
+];
   
-// constructor(private myService:ServiceService) {
-//    /* this.dataList = [
-//       { "entity_name": "FACULTY OF ARTS", "entity_id": "00010001" },
-//       { "entity_name": "FACULTY OF EDUCATION", "entity_id": "00010003" },
-//       { "entity_name": "FACULTY OF SCIENCE", "entity_id": "00010018" },
-//     ]; */
+selected=[];
+  
+  
+constructor(private myService:ServiceService) {
+
+    // this.dataList = [
+    //   { "entity_name": "FACULTY OF ARTS", "entity_id": "00010001" },
+    //   { "entity_name": "FACULTY OF EDUCATION", "entity_id": "00010003" },
+    //   { "entity_name": "FACULTY OF SCIENCE", "entity_id": "00010018" },
+    // ]; 
 //     this.sessionList = [
 //       { "sessionYr": "2020-2021", "sessionfrom": "2020"},
 //       { "sessionYr": "2019-2020", "sessionfrom": "2019"},
@@ -61,32 +121,40 @@ export class EditNameInHindiComponent {
 //       { "semester": "SM12", "sem_code": "SM12"},
 //     ];
 
-//     this.myService.getEntities().subscribe
-//       ( response => 
-//         {
-//           this.dataList =Array.from(Object.keys(response), k=>response[k]);
-//           //console.log(this.dataList);
-//         },
-//         (error:Response) =>   
-//         {
-//               if(error.status===404)
-//               {
-//                    alert ('No data found.');
-//               }
-//               else
-//               {
-//                   alert ('An unexpected error occured.');
-//                   console.log(error);
-//               }
-//          }
-//       )
+
+    this.myService.getEntities().subscribe
+      ( response => 
+        {
+          this.entity =Array.from(Object.keys(response), k=>response[k]);
+          console.log(1);
+          console.log(this.entity);
+          
+          
+        },
+        (error:Response) =>   
+        {
+              if(error.status===404)
+              {
+                   alert ('No data found.');
+              }
+              else
+              {
+                  alert ('An unexpected error occured.');
+                  console.log(error);
+              }
+         }
+      )
+
+      this.entity=this.dataList;
+      console.log("this.entitylist"+ this.entity);
   
-//   }   
-//   getSelectedEntityId(valueSelected){
-//     this.selectedEntityId = valueSelected;
-//     //console.log('selectedId=' + valueSelected);
-//     this.loadProgramCombo(this.selectedEntityId);
-//   }
+  }   
+
+  getSelectedEntityId(valueSelected){
+    this.selectedEntityId = valueSelected;
+    // console.log('selectedId=' + valueSelected);
+    this.loadProgramCombo(this.selectedEntityId);
+  }
 
 //   getSelectedSem(valueSelected){
 //     this.selectedSemCode = valueSelected;
@@ -98,52 +166,52 @@ export class EditNameInHindiComponent {
 //     //console.log('selectedSession=' + valueSelected);
 //   }
 
-//   loadProgramCombo(entity)
-//   {
-//     this.selectedProgramId ="";
-//     var prgid: string = "";
-//     var brid: String ="";
-//     var spid: String="";
-//     this.prgList = [];
-//     this.brList = [];
-//     this.spList = [];
-//     sessionStorage.setItem('entity_id', entity);
-//     this.valA=entity;
-//     this.myService.getProgramBrSp(entity).subscribe
-//     (
-//       (data) => {
-//       this.prgBrSpList = Array.from(Object.keys(data), k=>data[k]);
-//       //console.log(this.prgBrSpList);
+  loadProgramCombo(entity)
+  {
+    this.selectedProgramId ="";
+    var prgid: string = "";
+    var brid: String ="";
+    var spid: String="";
+    this.prgList = [];
+    this.brList = [];
+    this.spList = [];
+    sessionStorage.setItem('entity_id', entity);
+    this.valA=entity;
+    this.myService.getProgramBrSp(entity).subscribe
+    (
+      (data) => {
+      this.prgBrSpList = Array.from(Object.keys(data), k=>data[k]);
+      console.log(this.prgBrSpList);
     
-//       for(var i =0; i<this.prgBrSpList.length; ++i)
-//       { 
-//         if (prgid != this.prgBrSpList[i]["program_id"])
-//         {
-//           this.prgList.push(this.prgBrSpList[i]);
-//         }
-//         prgid=String(this.prgBrSpList[i]["program_id"]);
-//       } 
+      for(var i =0; i<this.prgBrSpList.length; ++i)
+      { 
+        if (prgid != this.prgBrSpList[i]["program_id"])
+        {
+          this.prgList.push(this.prgBrSpList[i]);
+        }
+        prgid=String(this.prgBrSpList[i]["program_id"]);
+      } 
     
-//      });
-//   }
+     });
+  }
   
-//   getSelectedProgramId(valueSelected){
-//     this.selectedProgramId = valueSelected;
-//    // console.log('selectedId=' + valueSelected);
-//     this.loadBranchCombo(this.selectedProgramId);
-//   }
+  getSelectedProgramId(valueSelected){
+    this.selectedProgramId = valueSelected;
+   console.log('selectedId=' + valueSelected);
+    // this.loadBranchCombo(this.selectedProgramId);
+  }
   
-//   loadBranchCombo(programId)
-//   {
-//     this.brList=[];
-//     for(var i =0; i<this.prgBrSpList.length; ++i)
-//       { 
-//         if (programId == this.prgBrSpList[i]["program_id"])
-//         {
-//           this.brList.push(this.prgBrSpList[i]);
-//         }
-//       }
-//   }
+  // loadBranchCombo(programId)
+  // {
+  //   this.brList=[];
+  //   for(var i =0; i<this.prgBrSpList.length; ++i)
+  //     { 
+  //       if (programId == this.prgBrSpList[i]["program_id"])
+  //       {
+  //         this.brList.push(this.prgBrSpList[i]);
+  //       }
+  //     }
+  // }
 
 //   getSelectedBranch(valueSelected){
 //     this.selectedBrId = valueSelected;
@@ -173,12 +241,12 @@ export class EditNameInHindiComponent {
 
 
   
-  public session: Object[];
-  public program: Object[];
-  public specialization: Object[];
-  public entity: Object[];
-  public branch: Object[];
-  public semester: Object[];
+  // public session: Object[];
+  // public program: Object[];
+  // public specialization: Object[];
+  // public entity: Object[];
+  // public branch: Object[];
+  // public semester: Object[];
   
 
   ngOnInit() {
@@ -194,34 +262,40 @@ export class EditNameInHindiComponent {
 
         this.program= [
           {id:1, name: 'B.ED.'},
-          {id:2, name: ''},
-          {id:3, name: ''},
-          {id:4, name: ''},
-          {id:5, name: ''},
+          {id:2, name: 'B.Tech'},
+          {id:3, name: 'B.Sc'},
+          {id:4, name: 'Diploma'},
+          {id:5, name: 'Law'},
         ];
 
-        this.specialization= [
-          {id:1, name: 'None'},
-          {id:2, name: ''},
-          {id:3, name: ''},
-          {id:4, name: ''},
-          {id:5, name: ''},
-        ];
+        // this.specialization= [
+        //   {id:1, name: 'None'},
+        //   {id:2, name: 'CS'},
+        //   {id:3, name: 'Electronics'},
+        //   {id:4, name: 'Core'},
+        //   {id:5, name: 'Designs'},
+        // ];
 
-        this.entity= [
-          {id:1, name: 'FACULTY OF ARTS'},
-          {id:2, name: 'FACULTY OF ENGINEERING'},
-          {id:3, name: 'FACULTY OF EDUCATION'},
-          {id:4, name: 'FACULTY OF SCIENCE'},
-          {id:5, name: 'FACULTY OF SOCIAL SCIENCE'},
-        ];
+        // 
+        // console.log( " 2 nginit");
+        // this.entity= this.dataList;
+        // console.log("this.entity"+ this.entity);
+       
+
+        // this.entity= [
+        //   {id:1, name: 'FACULTY OF ARTS'},
+        //   {id:2, name: 'FACULTY OF ENGINEERING'},
+        //   {id:3, name: 'FACULTY OF EDUCATION'},
+        //   {id:4, name: 'FACULTY OF SCIENCE'},
+        //   {id:5, name: 'FACULTY OF SOCIAL SCIENCE'},
+        // ];
 
         this.branch= [
-          {id:1, name: 'None'},
-          {id:2, name: ''},
-          {id:3, name: ''},
-          {id:4, name: ''},
-          {id:5, name: ''},
+          {id:1, name: 'Civil'},
+          {id:2, name: 'Electrical'},
+          {id:3, name: 'Footwear'},
+          {id:4, name: 'Mechanical'},
+          {id:5, name: 'None'},
         ];
 
         this.semester= [

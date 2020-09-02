@@ -1,34 +1,40 @@
 <div class="border border-dark rounded">
     <form class="card" > 
-    <div class="form-group">
+    
         <div class="card-header"><b>Personal Details</b></div>
     <div class="card-body">
+
+        <div class="form-group row">
     
-        <div class="d-inline-block mr-10">
+        <div class="w-70 d-inline-block col">
         <div class="row">
         
-        <label for="">Student Name</label>
+        <label class="col-1.5 col-form-label" for="">Student Name</label>
         <input type="text" class="form-control" formControlName="studentName">
+        
        
-        <label for="">Father's Name</label>
+        <label class="col-1.5 col-form-label" for="">Father's Name</label>
         <input type="text" class="form-control" formControlName="fatherName">
        
-        <label for="">Mother's Name</label>
+        <label class="col-1.5 col-form-label" for="">Mother's Name</label>
         <input type="text" class="form-control" formControlName="motherName">
+        </div>
         
-        <label for="dob">Date Of Birth</label>
+        <div class="row">
+        <label class="col-1.5 col-form-label" for="dob">Date Of Birth</label>
         <input type="date" name="dob" min="1970-02-01" class="form-control" formControlName="dob">
     
-        <label for="">Gender</label>
+        <label class="col-1.5 col-form-label" for="">Gender</label>
         <input type="text" class="form-control" formControlName="gender">
 
-        <label for="">Category</label>
+        <label class="col-1.5 col-form-label" for="">Category</label>
         <input type="text" class="form-control" formControlName="category">
+        </div>
 
         </div>
         </div>
-        </div>
-        </div>
+      </div>
+        
         </form>
         </div>
         

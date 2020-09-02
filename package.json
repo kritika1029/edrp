@@ -22,6 +22,7 @@
     "@angular/router": "~9.1.9",
     "@ng-bootstrap/ng-bootstrap": "^6.2.0",
     "@ng-select/ng-select": "^5.0.0",
+    "@ngx-translate/core": "^13.0.0",
     "@syncfusion/ej2-angular-inputs": "^18.2.48",
     "@types/jquery": "^3.5.1",
     "ag-grid-angular": "^23.2.1",

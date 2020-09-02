@@ -24,13 +24,6 @@ export class MarkUfmComponent {
         return this.formroll.get('rollNumber');
       }
 
-
-
-  session:null;
-  // semester:null;
-  // issue:null;
-
-
   
   dates = ['2019-07-01/2020-06-30',
            '2018-07-01/2019-06-30',
@@ -61,17 +54,13 @@ model = new Cancel(this.dates[0],this.semesters[0], this.issues[0],12345);
 
 submitted = false;
 
-// onSubmit() {
-//   this.submitted=true;
-// } 
+
 onSubmit(cancelForm: NgForm) : void {
   console.log(cancelForm.value)
  
 }
 
-//  newCancel() {
-//   this.model = new Cancel('','','',123456);
-//  }
+
 }
 
 

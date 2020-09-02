@@ -19,7 +19,7 @@ export class Finalreg2Component  {
     {id:4, name: '2020-2021'}
   ];
 
-  contactMethod = [
+  entitynames = [
     {id:1, name: 'Faculty of Education'},
     {id:2, name: 'Amlapuram Dec'},
     {id:3, name: 'Madurai Dec'},
@@ -27,7 +27,7 @@ export class Finalreg2Component  {
   ];
 
  
-
+ entities=[];
 
 
 

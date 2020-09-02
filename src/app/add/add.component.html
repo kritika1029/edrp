@@ -1,7 +1,7 @@
 
 <div class="card ">
     <div class="card-header"><h6>Select Course(s) to be added</h6>
-        <div class="text-right" ><a href="#"  role="button" routerLink="/mastercourseadd/data/selected">Add</a> 
+        <div class="text-right" ><a href="#"  role="button" routerLink="/mastercourseadd/data/adddrop/selected">Add</a> 
         </div> 
     </div>
     <div class="card-body">
@@ -11,6 +11,9 @@
         [rowData]="rowData | async"
         [columnDefs]="columnDefs"
         rowSelection="multiple"
+        [rowMultiSelectWithClick]="true"
+        (rowSelected)="onRowSelected($event)"
+    (selectionChanged)="onSelectionChanged($event)"
         >
     </ag-grid-angular>
     </div>

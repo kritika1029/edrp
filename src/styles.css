@@ -14,7 +14,7 @@
 
 @import "ag-grid-community/dist/styles/ag-theme-blue.css"; 
 
-
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 
 .form-control.ng-touched.ng-invalid{

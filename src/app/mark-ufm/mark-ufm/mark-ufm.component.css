@@ -1,6 +1,4 @@
 .card {
-    /* border-left-style: solid lightgrey; */
-    /* border-style:inset; */
     width: 530px;
     height: 330px;
     margin-top: 100px;
@@ -8,7 +6,7 @@
     margin-left: 400px;
     margin-right: 400px;
     text-align: left;
-    /* text-decoration: antiquewhite; */
+    
 }
 
 .shadow {
@@ -36,36 +34,15 @@
     text-align: left;
     margin-left: 2px;
     margin-top: 25px;
-    /* border: 0.5px solid black; */
-    /* padding:2.5px; */
+   
 }
 
 .alert {
-    width: 390px;
-    height: 20px;
-    /* border: 0.5px solid black; */
-    text-align: left;
-    font-family: "Times New Roman", Times, serif;
-    color: black;
-    
+    text-align: right;
+    width: auto;
+    height: fit-content;
 }
 
-/* .container {
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 30px;
-    outline: 1px solid red;
-    outline-offset: 15px;
-    box-shadow: 5px 5px grey;
-    width: 400px;
-    height: 150px;
-    padding: 25px;
-    margin-top: 30px;
-    margin-bottom: 1100px;
-    margin-left: 30px;
-    margin-right: 5px;
-    text-align: left;
-} */
 
 .btn1 {
     border: 0.5px solid black;
@@ -73,30 +50,7 @@
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
     margin-left: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
 
 }
 
-
-
- /* .row {
-    font-family: "Times New Roman", Times, serif;
-    width: 400px;
-    height: 20px;
-    text-align: left;
-    margin-left: 5px;
-    margin-top: 3px;
-     border: 0.5px solid black; 
-}  */
-
-/* .userresponse {
-    width: 400px;
-    height: 20px;  
-    border: 0.5px solid black;
-    text-align: left;
-    margin-left: 5px;
-    margin-top: 2px;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bold;
-
-} */

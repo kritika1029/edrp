@@ -15,40 +15,31 @@
   <br>
   <div class="container">
     <div class="row">
-    <div class="col-md-8">
-    <form  class="form-inline" action="#" method="post">
-      <div class ="form-group"><label class = "col-5 ">Search Entity</label>
-  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-  
-  <button type="button" class="btn btn-light">OK</button>
-  </div>
-    </form>
+    <div class="col-md-4">
+      <div class ="form-group" >
+        <label  class = "col-4">Entity Name</label>
+      <ng-select [items]="entitynames" bindLabel="name" placeholder="Select" appendTo="body" 
+      [(ngModel)]="entities" class= "wid">
+    
+      <div>{{entities | json}}</div>
+    </ng-select>
     </div></div>
     </div>
     <br>
-    <form  class="form-inline" action="/action_page.php">
-
-      <div class ="form-group" >
-        <label for ="contactMethod" class = "col-4">Entity Name</label>
-
-        <select class="form-control" ngModel name="contactMethod" id="contactMethod" >
-          <option value="">Select</option>
-          
-          <option *ngFor="let method of contactMethod" [value]="method.id">{{method.name}}</option>
-        </select>
+   
+    <div class ="form-group" >
       
-      </div>
-      <div class ="form-group" >
-        <label for ="contactMethod" class = "col-4">Report Header</label>
+    <div class="row">
+      <div class="col-md-4">
+      <label  class = "col-6">Report Header</label>
         <select class="form-control" ngModel name="contactMethod" id="contactMethod"  >
           <option value="">Select</option>
           
           <option value="Final Registration Chart" >Final Registration Chart</option>
           <option value="Final Registration Chart" >Checklist Registration</option>
         </select>
-      </div>
+      </div></div></div>
     
-    </form>
     <br>
     <button type="button" class="btn btn-light" onclick="goBack()" routerLink="/fregister">Back to Reports</button>
   </div>

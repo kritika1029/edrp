@@ -21,9 +21,23 @@ export class DropComponent implements OnInit {
 rowData: any;
  constructor(private HttpService: HttpClient) {}
 
+
+ onRowSelected(event) {
+  window.alert(
+    'row ' + event.node.data.cname + ' selected = ' + event.node.selected
+  );
+}
+
+onSelectionChanged(event) {
+  var rowCount = event.api.getSelectedNodes().length;
+  window.alert('selection changed, ' + rowCount + ' rows selected');
+}
+
+
  ngOnInit (){
    this.rowData=this.HttpService.get('./assets/drop.json')
  }
 
+ onSelect(){}
 
 }

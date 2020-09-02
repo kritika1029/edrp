@@ -1,38 +1,115 @@
 <div class="border border-dark rounded">
     <form class="card" > 
-    <div class="form-group">
+ 
         <div class="card-header"><b>Academic Details</b></div>
     <div class="card-body">
 
-       <div class="form-inline">
+        <div class="form-group row">
 
-    
+    <!-- Academic details -->
+        
+        <div class="w-70 d-inline-block col">
+               
         <div class="row">
-        <div class="d-inline-block mr-10">
-        
-        <label class="col-xs-5" for="">Enrollment No.</label>
-        <input type="text" class="form-control col-xs-3" formControlName="enrollmentno.">
+        <label class="col-1.5 col-form-label" for="">Enrollment No.</label>
+        <div class="col">
+        <input type="text" class="form-control" formControlName="enrollmentno.">
+        </div>
        
-        <label for="">Attempt No.</label>
+        <label class="col-1.5 col-form-label" for="">Attempt No.</label>
+        <div class="col">
         <input type="text" class="form-control" formControlName="attemptno.">
+        </div>
        
-        <label for="">Belongs To</label>
+        <label class="col-1.5 col-form-label" for="">Belongs To</label>
+        <div class="col">
         <input type="text" class="form-control" formControlName="belongsto">
-        
-        <label for="dob">Program Name</label>
+        </div>
+        </div>
+
+        <div class="row">
+        <label class="col-1.5 col-form-label" for="dob">Program Name</label>
+        <div class="col">
         <input type="text" class="form-control" formControlName="programname">
+        </div>
+        
     
-        <label for="">Branch</label>
+        <label class="col-1 col-form-label" for="">Branch</label>
+        <div class="col">
         <input type="text" class="form-control" formControlName="branch">
+        </div>
+        
 
-        <label for="">Specialization</label>
+        <label class="col-1 col-form-label" for="">Specialization</label>
+        <div class="col">
         <input type="text" class="form-control" formControlName="specialization">
+        </div>
+        </div>
 
         </div>
         </div>
         </div>
-        </div>
-    </div>
+    
         </form>
-        </div>
+    </div><br>
+
+        <!-- personal details -->
+
+        <div class="border border-dark rounded">
+            <form class="card" > 
+            
+                <div class="card-header"><b>Personal Details</b></div>
+            <div class="card-body">
+        
+                <div class="form-group row">
+            
+                <div class="w-70 d-inline-block col">
+                <div class="row">
+                
+                <label class="col-1.5 col-form-label" for="">Student Name</label>
+                <div class="col">
+                <input type="text" class="form-control" formControlName="studentName">
+                </div>
+               
+                <label class="col-1.5 col-form-label" for="">Father's Name</label>
+                <div class="col">
+                <input type="text" class="form-control" formControlName="fatherName">
+                </div>
+               
+                <label class="col-1.5 col-form-label" for="">Mother's Name</label>
+                <div class="col">
+                <input type="text" class="form-control" formControlName="motherName">
+                </div>
+                </div>
+                
+                <div class="row">
+                <label class="col-1.5 col-form-label" for="dob">Date Of Birth</label>
+                <div class="col">
+                <input type="date" name="dob" min="1970-02-01" class="form-control" formControlName="dob">
+                </div>
+            
+                <label class="col-1.5 col-form-label" for="">Gender</label>
+                <div class="col">
+                <input type="text" class="form-control" formControlName="gender">
+                </div>
+        
+                <label class="col-1.5 col-form-label" for="">Category</label>
+                <div class="col">
+                <input type="text" class="form-control" formControlName="category">
+                </div>
+                </div>
+        
+                </div>
+                </div>
+              </div>
+                
+                </form>
+                </div>
+                
+        
+
+
+        
+
+
         

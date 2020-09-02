@@ -12,4 +12,6 @@ export class PersonalDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
 }

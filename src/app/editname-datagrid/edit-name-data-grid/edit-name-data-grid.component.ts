@@ -27,4 +27,6 @@ export class EditNameDataGridComponent implements OnInit {
     {headerName: 'Mother Name in Hindi', field: 'motherNameinHindi',sortable:true,filter:true,editable:true },
 ];
 
+
+
 }
